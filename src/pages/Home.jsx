@@ -1,8 +1,23 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import "./Home.css";
 import Header from "../componets/Header";
 
 const Home = () => {
+  const[file,setFile]=useState(null)
+
+  const inputRef=useRef()
+  const handleFile=(file)=>{
+    if(!file) return
+    if(file.type!=="application/pdf"){
+      alert("Only pdf allowed")
+      return
+    }
+    if(file.size>5*1024*1024){
+      alert("Max size is 5mb")
+      return
+    }
+    setFile()
+  }
   return (
     <div>
       <Header />
@@ -15,12 +30,12 @@ const Home = () => {
             chance with recruitors and ATS systems
           </div>
           </div>
-          <div className="uploading-section">
-            <div>
+          <div className="uploading-section" onDrop={(e)=>{e.preventDefault(); handleFile(e.dataTransfer.files[0])}}  onDragOver={(e)=>e.preventDefault()} onClick={()=>inputRef.current.click()}>
+            <div className="middle-section">
               <div className="upload-icon"></div>
               <div className="upload-heading">Upload your resume</div>
               <div className="upload-subheading"> Drag and drop or click to browse</div>  <br />
-              <input type="file" name="resume" />
+              <input className="fileInput" type="file" name="resume" ref={inputRef} accept="application/pdf" onChange={(e)=>handleFile(e.target.files[0])}  />
               <div>
                 <ul>
                   <li>Pdf format only</li>
