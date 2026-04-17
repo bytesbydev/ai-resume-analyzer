@@ -28,21 +28,38 @@ border: 2px solid black;
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
+ text-align: center;
   height: 50%;
   border: 3px dashed grey;
 }
 .upload-icon{
-  margin-left: 70px;
+  margin-left: 40%;
   height: 60px;
   width: 60px;
   border-radius: 50%;
   background-color: black;
 }
 .upload-heading{
+  margin-top: 20px;
   font-size: 20px;
 color: black;
 }
 .upload-subheading{
+
   font-size: 16px;
 color: #797b7d;
+}
+.middle-section{
+  margin-top: 30px;
+}
+.fileInput{
+  border-radius: 10px;
+  padding: 10px;
+  background-color: blue;
+  color: aliceblue;
+}
+li{
+  color: #797b7d;
+  list-style: none;
 }
