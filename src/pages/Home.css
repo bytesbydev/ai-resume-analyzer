@@ -11,7 +11,6 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   flex-direction: column;
   justify-content: space-between;
     width: 50%;
-border: 2px solid black;
 }
 .center-heading-section{
   margin-top: 40px;
@@ -62,4 +61,19 @@ color: #797b7d;
 li{
   color: #797b7d;
   list-style: none;
+}
+.last-section{
+  display: flex;
+  justify-content: space-around;
+}
+.flex-box-1{
+  padding: 3px;
+  display: flex;
+  width: 40%;
+}
+.last-icon-1{
+  width: 20%;
+}
+.last-textbox{
+  width: 70%;
 }

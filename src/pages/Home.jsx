@@ -18,6 +18,7 @@ const Home = () => {
     }
     setFile()
   }
+
   return (
     <div>
       <Header />
@@ -45,16 +46,24 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div>
-            <div>
-              <div>icon</div>
-              <span>What we analyze</span>
-              <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta id tempore impedit sed architecto voluptate provident minus. Accusamus architecto, consequatur ea voluptate accusantium non, rerum hic ducimus in vitae temporibus?</span>
+          <div className="last-section">
+            <div className="flex-box-1">
+              <div className="last-icon-1">icon</div>
+              <div className="last-textbox">
+ <div>What we analyze</div>
+              <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta id tempore impedit sed architecto voluptate provident minus. Accusamus architecto, consequatur ea voluptate accusantium non, rerum hic ducimus in vitae temporibus?</div>
+              </div>
+             
             </div>
-            <div>
-              <div>icon</div>
-              <span>your privacy</span>
-              <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum dolore repudiandae numquam voluptas similique. Vitae, quos culpa! Fugiat nostrum placeat iste suscipit ratione molestias eum neque, asperiores architecto ad obcaecati.</span>
+            <div className="flex-box-1">
+              <div className="last-icon-1">
+                
+              </div>
+              <div className="last-textbox">
+ <div>your privacy</div>
+              <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum dolore repudiandae numquam voluptas similique. Vitae, quos culpa! Fugiat nostrum placeat iste suscipit ratione molestias eum neque, asperiores architecto ad obcaecati.</div>
+              </div>
+             
             </div>
           </div>
         </div>
