@@ -1,79 +1,9 @@
-.outor_div{
-  padding: 0;
-    height: 100vh;
-    width: 100%;
+.hero-section{
+  height: 100vh;
+  width: 50%;
+  border: 2px solid black;
+}
+.main-page{
   display: flex;
   justify-content: center;
-font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-.center_div{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-    width: 50%;
-}
-.center-heading-section{
-  margin-top: 40px;
-}
-.center-heading{
-  font-size: 30px;
-}
-.center-subheading{
-  font-size: 20px;
-  margin-top:10px ;
-  color: #797b7d;
-}
-.uploading-section{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
- text-align: center;
-  height: 50%;
-  border: 3px dashed grey;
-}
-.upload-icon{
-  margin-left: 40%;
-  height: 60px;
-  width: 60px;
-  border-radius: 50%;
-  background-color: black;
-}
-.upload-heading{
-  margin-top: 20px;
-  font-size: 20px;
-color: black;
-}
-.upload-subheading{
-
-  font-size: 16px;
-color: #797b7d;
-}
-.middle-section{
-  margin-top: 30px;
-}
-.fileInput{
-  border-radius: 10px;
-  padding: 10px;
-  background-color: blue;
-  color: aliceblue;
-}
-li{
-  color: #797b7d;
-  list-style: none;
-}
-.last-section{
-  display: flex;
-  justify-content: space-around;
-}
-.flex-box-1{
-  padding: 3px;
-  display: flex;
-  width: 40%;
-}
-.last-icon-1{
-  width: 20%;
-}
-.last-textbox{
-  width: 70%;
 }
