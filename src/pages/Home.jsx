@@ -22,19 +22,18 @@ const Home = () => {
   }
 
   return (
-    <div>
-      <div className="header">
+    <div className="home-container">
       <Navbar />
-      </div>
-      <div className="main-page">
-      <div className="hero-section">
+      <div className="middle-section">
+
+      
+   <main>
         <HeroSection/>
-      </div>
-      <div className="upload-section">
         <UploadBox/>
-      </div>
+        <Features
+   </main>
+   </div>
      </div>
-    </div>
   );
 };
 
