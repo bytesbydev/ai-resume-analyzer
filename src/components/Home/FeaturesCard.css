@@ -1,3 +1,14 @@
 .card-icon{
-    g=
+    padding: 10px;
+    height: 30px;
+    width: 30px;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+.feature-card{
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    border: 2px solid black;
 }

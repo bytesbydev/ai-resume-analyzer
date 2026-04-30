@@ -1,5 +1,6 @@
 import React from 'react'
 import FeaturesCard from './FeaturesCard'
+import "./FeatureSection.css"
 
 const FeatureSection = () => {
   const features=[{
@@ -11,7 +12,7 @@ const FeatureSection = () => {
   }]
   return (
     <div>
-      <div className="features-card">
+      <div className="features-section">
        {features.map((item,index)=>(
         <FeaturesCard key={index} title={item.heading} description={item.description}/>
        ))}
