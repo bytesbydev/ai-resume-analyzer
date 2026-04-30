@@ -1,9 +1,15 @@
-import React from 'react'
+import React from "react";
 
-const FeaturesCard = () => {
+const FeaturesCard = ({ title, description }) => {
   return (
-    <div>FeaturesCard</div>
-  )
-}
+    <div>
+    <div className="card-icon">icon</div>
+    <div>
+      <span>{title}</span>
+      <div>{description}</div>
+    </div>
+    </div>
+  );
+};
 
-export default FeaturesCard
+export default FeaturesCard;

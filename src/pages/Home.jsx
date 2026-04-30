@@ -3,6 +3,7 @@ import "./Home.css";
 import Navbar from "../components/common/Navbar";
 import HeroSection from "../components/Home/HeroSection";
 import UploadBox from "../components/Home/UploadBox";
+import FeatureSection from "../components/Home/FeatureSection";
 
 const Home = () => {
   const[file,setFile]=useState(null)
@@ -30,7 +31,7 @@ const Home = () => {
    <main>
         <HeroSection/>
         <UploadBox/>
-        <Features
+     <FeatureSection/>
    </main>
    </div>
      </div>
