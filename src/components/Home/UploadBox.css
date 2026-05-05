@@ -1,0 +1,11 @@
+.upload-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.icon{
+    height: 30px;
+    width: 30px;
+    border: 3px solid black;
+}
