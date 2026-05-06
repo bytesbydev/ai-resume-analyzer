@@ -4,6 +4,7 @@ import "./FeatureSection.css"
 
 const FeatureSection = () => {
   const features=[{
+    icon:""
     heading:"What we analyze",
     description:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum ipsam, sapiente suscipit quos non autem libero impedit distinctio! Eius unde rerum impedit sapiente qui porro beatae sint dignissimos quos quae?"
   },{
