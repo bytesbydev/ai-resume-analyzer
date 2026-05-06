@@ -10,8 +10,19 @@
     gap: 10px;
     flex-direction: column;
 }
-.icon{
-    height: 30px;
-    width: 30px;
-    border: 3px solid black;
+.uplaod-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:60px;
+    width: 60px;
+}
+
+.text-1{
+    font-size: 20px;
+    font-weight: 500;
+}
+.text-2{
+    font-size: 16px;
+    color: #666;
 }

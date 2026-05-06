@@ -26,8 +26,6 @@ const Home = () => {
     <div className="home-container">
       <Navbar />
       <div className="middle-section">
-
-      
    <main>
         <HeroSection/>
         <UploadBox/>
