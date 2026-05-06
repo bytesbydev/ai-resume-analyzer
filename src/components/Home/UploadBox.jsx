@@ -10,13 +10,12 @@ const UploadBox = () => {
           </div>
           <div className='text-1'>Upload your resume</div>
           <div className='text-2'>Drag or drop or click to browse</div>
-          <input className='f' type="file" placeholder='Choose the file'/>
-          <div>
+          <input className='f' type="file" placeholder='Choose the file' accept=".pdf"/>
+          <div className='instruction-section'>
             <ul>
-              <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum ipsam, sapiente </li>
-              <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum ipsam, sapiente </li>
-              <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum ipsam, sapiente </li>
-             
+              <li>PDF format only.</li>
+              <li>Maximum file size: 5MB</li>
+              <li>Analysis takes up to 2 minutes</li>
             </ul>
           </div>
         </div>
