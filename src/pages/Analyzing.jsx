@@ -1,14 +1,17 @@
 import React from 'react'
+import "./analyzing.css"
 import Navbar from '../components/common/Navbar'
 import AnaylsisLoader from '../components/loader/AnaylsisLoader'
-import LoaderStep from '../components/loader/LoaderStep'
 import ProgressBar from "../components/common/ProgressBar"
 const Analyzing = () => {
   return (
     <div>
       <Navbar/>
+   <div className="analysis">
       <AnaylsisLoader/>
-     <LoaderStep/>
+
+   </div>
+   
      <ProgressBar/>
     </div>
   )

@@ -1,0 +1,8 @@
+.loader-cards{
+    border: 2px solid black;
+}
+.loader-section{
+    height: 100px;
+    width: 100%;
+    gap: 30px;
+}
