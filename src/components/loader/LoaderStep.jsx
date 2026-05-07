@@ -1,5 +1,5 @@
 import React from 'react'
-import "./LoaderStep.css"
+import "./Loaderstep.css"
 const LoaderStep = () => {
   return (
     <div className='loader-section'>
