@@ -1,24 +1,24 @@
 import React from 'react'
 import FeaturesCard from './FeaturesCard'
 import "./FeatureSection.css"
-import { ReactComponent as AiIcon } from "../../assets/image1.png";
-import { ReactComponent as AtsIcon } from "../../assets/image2.png";
+import  AiIcon from "../../assets/image1.png";
+import  AtsIcon  from "../../assets/image2.png";
 
 const FeatureSection = () => {
   const features=[{
     heading:"What we analyze",
-    description:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum ipsam, sapiente suscipit quos non autem libero impedit distinctio! Eius unde rerum impedit sapiente qui porro beatae sint dignissimos quos quae?",
+    description:"Content quality,ATS compatibility,skill detection,formatting and keyword optimization based on the industry standards.",
     icon:AiIcon
   },{
-     heading:"What we analyze",
-    description:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum ipsam, sapiente suscipit quos non autem libero impedit distinctio! Eius unde rerum impedit sapiente qui porro beatae sint dignissimos quos quae?",
+     heading:"Your Privacy",
+    description:"Your resume is processed in - browser.We don't store or share your personal information.",
     icon:AtsIcon
   }]
   return (
     <div>
       <div className="features-section">
        {features.map((item,index)=>(
-        <FeaturesCard key={index} title={item.heading} description={item.description}/>
+        <FeaturesCard key={index} title={item.heading} description={item.description} icon={item.icon}/>
        ))}
       </div>
     </div>

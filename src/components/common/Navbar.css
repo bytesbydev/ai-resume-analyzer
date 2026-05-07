@@ -3,9 +3,9 @@ body{
     padding: 0;
 }
 .header{
-    border: 2px solid black;
-    width: 100%;
+    width:100%;
     color: red;
+    border-bottom: 2px solid rgb(183, 176, 176);
 }
 .icon-div{
     margin-left: 39px;

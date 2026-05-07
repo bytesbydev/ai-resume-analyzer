@@ -1,9 +1,8 @@
 import React from "react";
-import "./navbar.css"
+import "./Navbar.css"
 const Navbar = () => {
   return (
     <div>
-      <header>
         <div className="header">
           <div className="icon-div">
             <div className="icon">Icon</div>
@@ -12,7 +11,6 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-      </header>
     </div>
   );
 };

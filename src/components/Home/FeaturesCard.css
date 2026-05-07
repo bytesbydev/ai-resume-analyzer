@@ -1,8 +1,6 @@
 .card-icon{
-    padding: 10px;
-    height: 30px;
-    width: 30px;
-    border: 2px solid black;
+    height: 40px;
+    width: 40px;
 }
 .feature-card{
     gap:20px ;
@@ -10,5 +8,12 @@
     width: 100%;
     padding: 13px;
     display: flex;
-    border: 2px solid black;
+   background-color: #ffffff;
+}
+.t1{
+    font-size: 24px;
+}
+.t2{ 
+    margin-top: 10px;
+    font-size: 17px;
 }

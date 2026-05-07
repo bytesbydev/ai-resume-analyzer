@@ -3,10 +3,10 @@ import "./FeaturesCard.css"
 const FeaturesCard = ({icon,title, description }) => {
   return (
     <div className="feature-card">
-    <div className="card-icon">{icon}</div>
+   <img src={icon} alt={title} className="card-icon"/>
     <div>
-      <span>{title}</span> 
-      <div>{description}</div>
+      <span className="t1">{title}</span> 
+      <div className="t2">{description}</div>
     </div>
     </div>
   );
