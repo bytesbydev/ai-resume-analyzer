@@ -11,9 +11,9 @@ Analysing your resume
           </span> <br />
           <span>Processing typically takes 3 to 5 seconds</span>
         </div>
-        <div className="loader-section">
+  
           <LoaderStep/>
-        </div>
+        
       </div>
     </div>
   );

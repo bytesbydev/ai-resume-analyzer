@@ -9,7 +9,6 @@ const Analyzing = () => {
       <Navbar/>
    <div className="analysis">
       <AnaylsisLoader/>
-
    </div>
    
      <ProgressBar/>
