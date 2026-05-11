@@ -4,11 +4,12 @@
     height: 60px;
     width: 100%;
     border: 2px solid black;
+    border-radius: 10px;
 }
 .loader-section{
     margin-top: 20px;
     height: 220px;
-    width: 100%;
+    width: 99%;
     display: flex;
     gap: 10px;
     flex-direction: column;
@@ -16,8 +17,15 @@
 .description-section{
 padding: 10px;
 }
+.icon{
+        border-radius: 50%;
+    border: 1px solid black;
+    height: 40px;
+    width: 40px;
+}
 .icon-description{   
 width: 15%;
-    border-radius: 50%;
-    border: 1px solid black;
+display: flex;
+justify-content: center;
+align-items: center;
 }

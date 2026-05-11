@@ -9,12 +9,12 @@ const LoaderStep = () => {
         <span> 1-2s</span></div>
       </div>
       <div className='loader-cards'>
-        <div  className='loader-icon'>icon</div>
+          <div className="icon-description"> <div className='icon'>icon</div></div>
         <div className='description-section'> <span>Analyzing skills and experience</span> <br />
         <span> 1-2s</span></div>
       </div>
       <div className='loader-cards'>
-        <div  className='loader-icon'>icon</div>
+         <div className="icon-description"> <div className='icon'>icon</div></div>
         <div className='description-section'> <span>Generating insights</span>
         <span> 1-2s</span></div>
       </div>
