@@ -6,11 +6,12 @@ const AnaylsisLoader = () => {
     <div>
       <div className="main-box">
         <div className="anaylysis-heading">
-          <span>Analysing your resume</span> <br />
-          <span>Processing typically takes 3 to 5 seconds</span>
+          <span className="a-heading">Analysing your resume</span> <br />
+          <span className="a-description">Processing typically takes 3 to 5 seconds</span>
         </div>
-        <div className="loader"></div>
+        <div className="loader">
         <LoaderStep />
+        </div>
       </div>
     </div>
   );

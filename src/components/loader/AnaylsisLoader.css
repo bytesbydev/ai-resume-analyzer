@@ -1,5 +1,5 @@
 .main-box{
-    padding: 20px;
+    padding: 30px;
     height: 400px;
     width: 400px;
     border: 2px solid black;
@@ -8,5 +8,17 @@
     align-items: center;
 }
 .anaylysis-heading{
-
+    text-align: center;
+height: 20% ;
+}
+.loader{
+    width: 100%;
+}
+.a-heading{
+    font-size: 30px;
+    font-weight: 700;
+}
+.a-description{
+    font-size: 16px;
+    color: rgb(145, 140, 140);
 }
