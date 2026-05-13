@@ -11,10 +11,10 @@ const Analyzing = () => {
       <div className="analyzing-wrapper">
         <div className="analyzing-loader">
           <AnaylsisLoader />
-        </div>
-
         <div className="analyzing-progressbar">
+          <span>Progress</span>
           <ProgressBar progress={50} />
+        </div>
         </div>
       </div>
     </div>

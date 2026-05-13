@@ -9,4 +9,8 @@
     height: 400px;
     width: 400px;
     border: 2px solid black;
+        border-radius: 20px;
+}
+.analyzing-progressbar{
+    margin-top: 20px;
 }
