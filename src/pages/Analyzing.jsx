@@ -3,13 +3,17 @@ import "./analyzing.css";
 import Navbar from "../components/common/Navbar";
 import AnaylsisLoader from "../components/loader/AnaylsisLoader";
 import ProgressBar from "../components/common/ProgressBar";
+
 const Analyzing = () => {
   return (
-    <div>
+    <div className="analyzing-page">
       <Navbar />
-      <div className="analysis">
-        <AnaylsisLoader />
-        <div className="progress">
+      <div className="analyzing-wrapper">
+        <div className="analyzing-loader">
+          <AnaylsisLoader />
+        </div>
+
+        <div className="analyzing-progressbar">
           <ProgressBar progress={50} />
         </div>
       </div>
