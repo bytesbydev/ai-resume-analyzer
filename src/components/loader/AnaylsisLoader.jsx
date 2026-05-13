@@ -23,13 +23,20 @@ const AnaylsisLoader = () => {
 
   const [currentStep, setCurrentStep] = useState(0);
 
-  const progress = ((currentStep + 1) / steps.length) * 100;
+  const [progress, setProgress] = useState(0);
+  // const progress = ((currentStep + 1) / steps.length) * 100;
 
   useEffect(() => {
     if (currentStep >= steps.length - 1) return;
     const timer = setTimeout(() => {
       setCurrentStep((prev) => prev + 1);
     }, 2000);
+      const progressInterval = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 100) return 100;
+        return prev + 2;
+      });
+    }, 80);
     return () => clearTimeout(timer);
   }, [currentStep, steps.length]);
   return (
@@ -42,25 +49,29 @@ const AnaylsisLoader = () => {
           </span>
         </div>
         <div className="loader">
-          {steps.map((index) =>{
+          {steps.map((step,index) =>{
             let status="pending"
             if(index<currentStep){
               status="completed"
             } else if(index===currentStep){
               status="current"
             }
+            else{
+              status="pending"
+            }
           return (
             <LoaderStep
               key={index}
-              icon={steps[index].icon}
-              title={steps[index].title}
-              time={steps[index].time}
+              icon={step.icon}
+              title={step.title}
+              time={step.time}
               status={status}
             />
           )})}
         </div>
         <div className="analyzing-progressbar">
           <span>Progress</span>
+       <span>{Math.round(progress)}%</span>
           <ProgressBar progress={progress} />
         </div>
       </div>

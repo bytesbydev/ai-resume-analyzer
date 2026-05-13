@@ -10,7 +10,21 @@
     display: flex;
     gap: 10px;
 }
+.loader-cards.completed {
+   background: green;
+}
 
+.loader-cards.active {
+   background: blue;
+}
+
+.loader-cards.pending {
+   background: gray;
+}
+
+.completed .icon {
+   color: green;
+}
 .description-section{
 padding: 10px;
 font-size: 16px;
