@@ -1,8 +1,8 @@
 import React from "react";
-import "./Loaderstep.css";
+import "./loaderstep.css";
 const LoaderStep = ({ icon, title, time, status }) => {
   return (
-    <div className={`loader-cards ${status}`}>
+    <div className={`loader-cards ${status}`} >
       {/* <span>
         {status === "completed" ? "✔" : status === "current" ? "⏳" : "○"}
       </span> */}

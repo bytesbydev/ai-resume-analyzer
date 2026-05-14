@@ -1,5 +1,4 @@
 .loader-cards{
-    /* background-color: rgb(145, 172, 215); */
     display: flex;
     gap: 30px;
     height: 60px;
@@ -11,7 +10,10 @@
     gap: 10px;
 }
 .loader-cards.active {
-  background: #0261de;
+  background-color: #07f09a;
+}
+.loader-cards.completed {
+  background-color: #bdf007;
 }
 
 .step-card.completed {
