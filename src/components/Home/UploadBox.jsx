@@ -1,6 +1,13 @@
 import React from 'react'
 import "./UploadBox.css"
+import { extractText } from '../../utils/extractText';
 const UploadBox = () => {
+  const handleFileChange=async (e)=>{
+    const file=e.target.files[0];
+    if(!file) return
+     const text=await extractText(file)
+     console.log(text)
+  }
   return (
     <div>
       <div className="upload-box">
@@ -10,7 +17,7 @@ const UploadBox = () => {
           </div>
           <div className='text-1'>Upload your resume</div>
           <div className='text-2'>Drag or drop or click to browse</div>
-          <input className='f' type="file" placeholder='Choose the file' accept=".pdf"/>
+          <input className='f' onChange={handleFileChange} type="file" placeholder='Choose the file' accept=".pdf"/>
           <div className='instruction-section'>
             <ul>
               <li>PDF format only.</li>

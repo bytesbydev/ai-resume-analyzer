@@ -6,22 +6,6 @@ import UploadBox from "../components/Home/UploadBox";
 import FeatureSection from "../components/Home/FeatureSection";
 
 const Home = () => {
-  const[file,setFile]=useState(null)
-
-  const inputRef=useRef()
-  const handleFile=(file)=>{
-    if(!file) return
-    if(file.type!=="application/pdf"){
-      alert("Only pdf allowed")
-      return
-    }
-    if(file.size>5*1024*1024){
-      alert("Max size is 5mb")
-      return
-    }
-    setFile()
-  }
-
   return (
     <div className="home-container">
       <Navbar />

@@ -4,7 +4,7 @@ import Analyzing from './pages/Analyzing'
 
 const App = () => {
   return (
-    <div>
+    <div><Home/>
       <Analyzing/>
       </div>
   )
