@@ -24,21 +24,47 @@ const AnaylsisLoader = () => {
   const [currentStep, setCurrentStep] = useState(0);
 
   const [progress, setProgress] = useState(0);
-  // const progress = ((currentStep + 1) / steps.length) * 100;
 
-  useEffect(() => {
-    if (currentStep >= steps.length - 1) return;
-    const timer = setTimeout(() => {
-      setCurrentStep((prev) => prev + 1);
-    }, 2000);
-      const progressInterval = setInterval(() => {
+ useEffect(() => {
+    const progressInterval = setInterval(() => {
       setProgress((prev) => {
-        if (prev >= 100) return 100;
-        return prev + 2;
+
+        if (prev >= 100) {
+          clearInterval(progressInterval);
+          return 100;
+        }
+        return prev + 1;
       });
-    }, 80);
-    return () => clearTimeout(timer);
-  }, [currentStep, steps.length]);
+
+    }, 30);
+
+    // Step Changes
+    const stepTimers = [
+
+      setTimeout(() => {
+        setCurrentStep(1);
+      }, 1000),
+
+      setTimeout(() => {
+        setCurrentStep(2);
+      }, 2000),
+
+      // Final completion
+      setTimeout(() => {
+        setCurrentStep(3);
+      }, 3000),
+
+    ];
+
+    return () => {
+      clearInterval(progressInterval);
+
+      stepTimers.forEach((timer) => {
+        clearTimeout(timer);
+      });
+    };
+
+  }, []);
   return (
     <div>
       <div className="main-box">
@@ -48,27 +74,28 @@ const AnaylsisLoader = () => {
             Processing typically takes 3 to 5 seconds
           </span>
         </div>
-        <div className="loader">
-          {steps.map((step,index) =>{
-            let status="pending"
-            if(index<currentStep){
-              status="completed"
-            } else if(index===currentStep){
-              status="current"
-            }
-            else{
-              status="pending"
-            }
-          return (
-            <LoaderStep
-              key={index}
-              icon={step.icon}
-              title={step.title}
-              time={step.time}
-              status={status}
-            />
-          )})}
-        </div>
+    <div className="loader">
+  {steps.map((step, index) => {
+    const isActive = currentStep >= index;
+    const isComplete = currentStep > index;
+
+    const status = isComplete
+      ? "completed"
+      : isActive
+      ? "active"
+      : "pending";
+
+    return (
+      <LoaderStep
+        key={index}
+        icon={step.icon}
+        title={step.title}
+        time={step.time}
+        status={status}
+      />
+    );
+  })}
+</div>
         <div className="analyzing-progressbar">
           <span>Progress</span>
        <span>{Math.round(progress)}%</span>

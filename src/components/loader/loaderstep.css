@@ -1,5 +1,5 @@
 .loader-cards{
-    background-color: rgb(145, 172, 215);
+    /* background-color: rgb(145, 172, 215); */
     display: flex;
     gap: 30px;
     height: 60px;
@@ -10,20 +10,19 @@
     display: flex;
     gap: 10px;
 }
-.loader-cards.completed {
-   background: green;
-}
-
 .loader-cards.active {
-   background: blue;
+  background: #0261de;
 }
 
-.loader-cards.pending {
-   background: gray;
+.step-card.completed {
+  background: #04de50;
 }
 
-.completed .icon {
-   color: green;
+.icon.completed {
+   background-color: green;
+}
+.icon{
+background-color: red;
 }
 .description-section{
 padding: 10px;
