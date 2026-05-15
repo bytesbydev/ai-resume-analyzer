@@ -2,7 +2,9 @@ import React from 'react'
 
 const Results = () => {
   return (
-    <div>Results</div>
+    <div>
+      <div className='text-xl font-bold'>helklo ehtis shkfksaha</div>
+    </div>
   )
 }
 

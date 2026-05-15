@@ -1,25 +1,31 @@
-import React from 'react'
-import "./Loaderstep.css"
-const LoaderStep = () => {
-  return (
-    <div className='loader-section'>
-      <div className='loader-cards'>
-        <div className="icon-description"> <div className='icon'>icon</div></div>
-        <div className='description-section'> <span className='l-subdescription'>Parsing resume content</span> <br />
-        <span> 1-2s</span></div>
-      </div>
-      <div className='loader-cards'>
-          <div className="icon-description"> <div className='icon'>icon</div></div>
-        <div className='description-section'> <span className='l-subdescription'>Analyzing skills and experience</span> <br />
-        <span> 1-2s</span></div>
-      </div>
-      <div className='loader-cards'>
-         <div className="icon-description"> <div className='icon'>icon</div></div>
-        <div className='description-section'> <span className='l-subdescription'>Generating insights</span>
-        <span> 1-2s</span></div>
-      </div>
-    </div>
-  )
-}
+import React from "react";
 
-export default LoaderStep
+const LoaderStep = ({ icon, title, time, status }) => {
+  return (
+    <div
+      className={`flex h-15 w-full border-2 border-black rounded-[10px] mt-5 gap-2.5 ${
+        status === "active"
+          ? "bg-[#07f09a]"
+          : status === "completed"
+          ? "bg-[#bdf007]"
+          : ""
+      }`}
+    >
+      
+      <div className="w-[15%] flex justify-center items-center">
+        <div className="h-10 w-10 rounded-full border border-black flex justify-center items-center bg-red-500">
+          {icon}
+        </div>
+      </div>
+
+      <div className="text-base p-2.5">
+        <span className="font-bold">{title}</span>
+        <br />
+        <span>{time}</span>
+      </div>
+
+    </div>
+  );
+};
+
+export default LoaderStep;

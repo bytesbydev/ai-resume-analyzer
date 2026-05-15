@@ -1,32 +1,15 @@
-import React, { useRef, useState } from "react";
-import "./Home.css";
+import React from "react";
 import Navbar from "../components/common/Navbar";
 import HeroSection from "../components/Home/HeroSection";
 import UploadBox from "../components/Home/UploadBox";
 import FeatureSection from "../components/Home/FeatureSection";
 
 const Home = () => {
-  const[file,setFile]=useState(null)
-
-  const inputRef=useRef()
-  const handleFile=(file)=>{
-    if(!file) return
-    if(file.type!=="application/pdf"){
-      alert("Only pdf allowed")
-      return
-    }
-    if(file.size>5*1024*1024){
-      alert("Max size is 5mb")
-      return
-    }
-    setFile()
-  }
-
   return (
     <div className="home-container">
       <Navbar />
-      <div className="middle-section">
-   <main>
+      <div className="h-fit w-full flex justify-center pb-[50px">
+   <main className="h-fit w-6/12">
         <HeroSection/>
         <UploadBox/>
      <FeatureSection/>
