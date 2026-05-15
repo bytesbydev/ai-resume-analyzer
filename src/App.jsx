@@ -6,9 +6,9 @@ import Results from './pages/Results'
 const App = () => {
   return (
     <div>
-    <Home/>
+    {/* <Home/> */}
     <Analyzing/>
-      <Results/>
+      {/* <Results/> */}
       </div>
   )
 }

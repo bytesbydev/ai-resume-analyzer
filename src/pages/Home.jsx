@@ -1,5 +1,4 @@
 import React from "react";
-import "./Home.css";
 import Navbar from "../components/common/Navbar";
 import HeroSection from "../components/Home/HeroSection";
 import UploadBox from "../components/Home/UploadBox";

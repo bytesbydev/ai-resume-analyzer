@@ -1,6 +1,5 @@
 import React from 'react'
 import FeaturesCard from './FeaturesCard'
-import "./FeatureSection.css"
 import  AiIcon from "../../assets/image1.png";
 import  AtsIcon  from "../../assets/image2.png";
 

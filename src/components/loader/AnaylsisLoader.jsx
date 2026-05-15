@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "./AnaylsisLoader.css";
 import LoaderStep from "./LoaderStep";
 import ProgressBar from "../common/ProgressBar";
 const AnaylsisLoader = () => {

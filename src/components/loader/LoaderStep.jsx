@@ -1,5 +1,4 @@
 import React from "react";
-import "./loaderstep.css";
 
 const LoaderStep = ({ icon, title, time, status }) => {
   return (

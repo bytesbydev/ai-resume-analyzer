@@ -1,5 +1,4 @@
 import React from "react";
-import "./UploadBox.css";
 import { extractText } from "../../utils/extractText";
 import { analyzeResume } from "../../utils/analyzeResume";
 import { aiAnalysis } from "../../utils/aiAnalysis";
@@ -19,7 +18,7 @@ const UploadBox = () => {
     <div>
       <div className="h-100  w-full flex justify-center items-center text-center bg-white mt-10 border-2 border-solid border-[black]">
         <div className="flex items-center gap-2.5 flex-col">
-          <div className=" flex justify-center items-center h-[60px] w-[60px]">
+          <div className=" flex justify-center items-center h-15 w-15">
             <svg
               width="137px"
               height="137px"

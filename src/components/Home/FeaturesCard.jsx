@@ -1,5 +1,4 @@
 import React from "react";
-import "./FeaturesCard.css"
 const FeaturesCard = ({icon,title, description }) => {
   return (
     <div className='gap-5 h-full w-full flex bg-white p-3.75'>
