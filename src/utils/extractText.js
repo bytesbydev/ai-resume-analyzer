@@ -1,19 +1,37 @@
-import * as pdfjsLib from "pdfjs-dist"
-pdfjsLib.GlobalWorkerOptions.workerSrc=new URL("pdfjs-dist/build/pdf.worker.min.mjs",import.meta.url).toString();
-export const extractText=async(file)=>{
- try {
-    const arrayBuffer=await file.arrayBuffer();
-    const pdf=await pdfjsLib.getDocument({data:arrayBuffer}).promise;
-    let text="";
-    for(let i=1; i<=pdf.numPages;i++){
-        const page=await pdf.getPage();
-        const content =await page.getTextContent()
-        const pageText=content.items.map((item)=>item.str).join("")
-        text+=pageText + "\n"
+import * as pdfjsLib from "pdfjs-dist";
+
+// Worker setup
+pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
+  "pdfjs-dist/build/pdf.worker.min.mjs",
+  import.meta.url
+).toString();
+
+export const extractText = async (file) => {
+  try {
+    if (!file) throw new Error("No file provided");
+
+    const arrayBuffer = await file.arrayBuffer();
+
+    const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+
+    let fullText = "";
+
+    for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+      const page = await pdf.getPage(pageNum);
+
+      const content = await page.getTextContent();
+
+      const pageText = content.items.map((item) => item.str).join(" ");
+
+      fullText += pageText + " ";
     }
-    console.log(text)
-    return text
- } catch (error) {
-    console.log("pdf extraction error: ",error)
- }
-}
+
+    // Clean extra spaces (IMPORTANT)
+    const cleanText = fullText.replace(/\s+/g, " ").trim();
+
+    return cleanText;
+  } catch (error) {
+    console.error("PDF extraction error:", error);
+    return null;
+  }
+};

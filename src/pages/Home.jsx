@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import "./Home.css";
 import Navbar from "../components/common/Navbar";
 import HeroSection from "../components/Home/HeroSection";
@@ -9,8 +9,8 @@ const Home = () => {
   return (
     <div className="home-container">
       <Navbar />
-      <div className="middle-section">
-   <main>
+      <div className="h-fit w-full flex justify-center pb-[50px">
+   <main className="h-fit w-6/12">
         <HeroSection/>
         <UploadBox/>
      <FeatureSection/>

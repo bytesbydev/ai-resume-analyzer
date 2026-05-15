@@ -16,7 +16,7 @@ const FeatureSection = () => {
   }]
   return (
     <div>
-      <div className="features-section">
+      <div className=' flex gap-5 mt-12.5 p-3.75'>
        {features.map((item,index)=>(
         <FeaturesCard key={index} title={item.heading} description={item.description} icon={item.icon}/>
        ))}

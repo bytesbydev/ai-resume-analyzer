@@ -67,14 +67,13 @@ const AnaylsisLoader = () => {
   }, []);
   return (
     <div>
-      <div className="main-box">
-        <div className="anaylysis-heading">
-          <span className="a-heading">Analysing your resume</span> <br />
-          <span className="a-description">
+        <div className=' text-center h-1/5'>
+          <span className='text-3xl font-bold'>Analysing your resume</span> <br />
+          <span className='text-base text-[rgb(145,140,140)]'>
             Processing typically takes 3 to 5 seconds
           </span>
         </div>
-    <div className="loader">
+    <div className='w-full'>
   {steps.map((step, index) => {
     const isActive = currentStep >= index;
     const isComplete = currentStep > index;
@@ -96,13 +95,13 @@ const AnaylsisLoader = () => {
     );
   })}
 </div>
-        <div className="analyzing-progressbar">
+        <div className=' mt-5'>
           <span>Progress</span>
        <span>{Math.round(progress)}%</span>
           <ProgressBar progress={progress} />
         </div>
       </div>
-    </div>
+  
   );
 };
 
