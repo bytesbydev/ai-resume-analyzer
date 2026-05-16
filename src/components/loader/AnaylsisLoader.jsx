@@ -96,7 +96,7 @@ const AnaylsisLoader = () => {
 </div>
         <div className=' mt-5'>
           <span>Progress</span>
-       <span>{Math.round(progress)}%</span>
+       <span className="ml-1">{Math.round(progress)}%</span>
           <ProgressBar progress={progress} />
         </div>
       </div>
