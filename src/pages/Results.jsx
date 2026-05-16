@@ -1,9 +1,12 @@
 import React from 'react'
+import ResultHeader from '../components/results/ResultHeader'
 
 const Results = () => {
   return (
     <div>
-      <div className='text-xl font-bold'>helklo ehtis shkfksaha</div>
+      <div>
+        <ResultHeader/>
+      </div>
     </div>
   )
 }
