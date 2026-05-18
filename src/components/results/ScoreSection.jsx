@@ -1,7 +1,7 @@
 import React from "react";
 import { Award, TrendingUp, AlertCircle, CheckCircle2 } from "lucide-react";
 const ScoreSection = () => {
-  const score = 88;
+  const score = 90;
   return (
     <div>
       <div className="flex items-center gap-3 mb-6">
@@ -19,8 +19,10 @@ const ScoreSection = () => {
       </div>
       <div className="ats-score">
         <span>Resume score </span>
-        <div>
-          <span
+        <div className="flex justify-between">
+          
+          <div>
+            <span
             className={`text-5xl font-semibold ${
               score >= 80
                 ? "text-green-600"
@@ -32,12 +34,13 @@ const ScoreSection = () => {
             {score}
           </span>
           <span className="text-2xl font-medium text-gray-700">/100</span>
+            </div>
+          <div className={`h-10 w-fit flex justify-center items-center  text-white font-semibold rounded border-2 solid p-5 ${score >= 90 ? 'bg-green-500' : score >= 60 ? 'bg-amber-500' : 'bg-red-500'}`}>
+            {score > 90 ? 'Excellent' : score > 60 ? 'Good' : 'Needs Improvement'}
+          </div>
+        </div> <br />
+        <div className="h-3 rounded bg-green-500" style={{ width: `${score}%` }}></div>
         </div>
-        <div className="h-3 w-full rounded border-gray-300"></div> 
-        <div className={w-${score}>
-
-       5 </div>
-      </div>
     </div>
   );
 };
