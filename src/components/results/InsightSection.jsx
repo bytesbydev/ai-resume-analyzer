@@ -1,8 +1,14 @@
 import React from 'react'
-
+import { CheckCircle2 } from "lucide-react";
+import InsightCard from './InsightCard';
 const InsightSection = () => {
+
   return (
-    <div>InsightSection</div>
+    <div className='border-2 border-black flex gap-6 solid h-fit p-3 w-full mt-10'>
+      <InsightCard type="strength"/>
+      <InsightCard type="improvement"/>
+      <InsightCard type="critical"/>
+    </div>
   )
 }
 
