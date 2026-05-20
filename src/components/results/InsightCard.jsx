@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {CheckCircle2,AlertCircle } from "lucide-react";
 const InsightCard = ({ type, title }) => {
 
   const strengths = [
@@ -44,29 +44,40 @@ const InsightCard = ({ type, title }) => {
   ];
 
   return (
-    <div className='h-full w-1/3 rounded-2xl border-2 border-black p-4'>
+    <div className='h-auto w-1/3 rounded-2xl border-2 border-black p-4'>
 
       {/* Title */}
-      <h2 className='text-xl font-bold mb-4'>
+      <h4 className='text-xl font-bold mb-4'>
         {title}
-      </h2>
+      </h4>
       {type === "strength" &&
         strengths.map((item, index) => (
-          <div key={index} className='font-semibold text-green-600 mb-2'>
-            {item.label}
-          </div>
+           <div key={index} className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 shrink-0" />
+                <span className="text-sm text-gray-700">
+                  {item.label}
+                </span>
+              </div>
         ))}
       {type === "improvement" &&
         improvements.map((item, index) => (
-          <div key={index} className='font-semibold text-yellow-600 mb-2'>
-            {item.label}
-          </div>
+           <div key={index} className="flex items-start gap-2">
+                <div className="w-4 h-4 mt-0.5 shrink-0">
+                  <div className="w-1.5 h-1.5 rounded-full bg-amber-600 mx-auto mt-1.5" />
+                </div>
+                <span className="text-sm text-gray-700">
+                  {item.label}
+                </span>
+              </div>
         ))}
       {type === "critical" &&
         criticalIssues.map((item, index) => (
-          <div key={index} className='font-semibold text-red-600 mb-2'>
-            {item.label}
-          </div>
+                        <div key={index} className="flex items-start gap-2">
+                <AlertCircle className="w-4 h-4 text-red-600 mt-0.5 shrink-0" />
+                <span className="text-sm text-gray-700">
+                  {item.label}
+                </span>
+              </div>
         ))}
     </div>
   )
