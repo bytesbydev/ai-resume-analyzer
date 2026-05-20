@@ -44,9 +44,7 @@ const InsightCard = ({ type, title }) => {
   ];
 
   return (
-    <div className='h-auto w-1/3 rounded-2xl border-2 border-black p-4'>
-
-      {/* Title */}
+    <div className={`h-auto w-1/3 rounded-2xl p-4 ${type=== "strength" ? "bg-green-50 border border-green-200": type=== "improvement" ? "bg-amber-50 border border-amber-200":"bg-red-50 border border-red-200"}`}>
       <h4 className='text-xl font-bold mb-4'>
         {title}
       </h4>
