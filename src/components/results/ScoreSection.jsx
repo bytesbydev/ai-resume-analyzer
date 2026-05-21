@@ -56,8 +56,8 @@ const ScoreSection = () => {
         <div className="font-sm mt-2 text-gray-500">Your resume is above average, but implementing the suggestions below will significantly improve your chances with recruiters and ATS systems.</div>
         <InsightSection/>
       </div>
-      <div className="w-full border-1 mt-10 border-gray-300 solid"></div>
-    <div className="section breakdown mt-4 border-2 border-gray-300 solid p-5">
+      <div className="w-full border mt-10 border-gray-300 solid"></div>
+    <div className="section breakdown mt-4 p-5">
  <SectionBreakdown/>
     </div>
     </div>

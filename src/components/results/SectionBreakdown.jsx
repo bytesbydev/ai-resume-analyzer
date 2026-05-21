@@ -23,7 +23,7 @@ const SectionBreakdown = () => {
                   <div className="bg-black h-1.5 rounded-xl" style={{ width: `${category.score}%` }}>
                     </div> </div>
                 <span
-                  className={text-right}
+                  className={`text-sm font-medium ${category.score >= 80 ? 'text-green-600' : category.score >= 60 ? 'text-amber-600' : 'text-red-600'}`}
                 >
                   {category.score}
                 </span>
