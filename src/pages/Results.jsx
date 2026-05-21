@@ -10,7 +10,7 @@ const Results = () => {
         <ResultHeader/>
         </div>
         <main  className='flex flex-col items-center'>
-          <div className='w-[90%] h-fit border-2 border-black solid mt-7'>
+          <div className='w-[90%] h-fit  solid mt-7'>
         <div>
           <span className=' font-semibold text-2xl'>Resume Analysis report</span> <br />
           <span className='text-md font-semibold text-gray-600'>Comprehensive breakdown with actionable recommendations</span>

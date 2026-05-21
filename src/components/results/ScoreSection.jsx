@@ -2,7 +2,7 @@ import React from "react";
 import { Award, TrendingUp, AlertCircle, CheckCircle2 } from "lucide-react";
 import InsightSection from "./InsightSection";
 const ScoreSection = () => {
-  const score = 90;
+  const score = 72;
 
   return (
     <div>
@@ -20,7 +20,7 @@ const ScoreSection = () => {
         </div>
       </div>
       <div className="ats-score">
-        <span>Resume score </span>
+        <span className="font-semibold text-black">Resume score </span>
         <div className="flex justify-between">
           <div>
             <span
@@ -37,9 +37,9 @@ const ScoreSection = () => {
             <span className="text-2xl font-medium text-gray-700">/100</span>
           </div>
           <div
-            className={`h-10 w-fit flex justify-center items-center  text-white font-semibold rounded border-2 solid p-5 ${score >= 90 ? "bg-green-500" : score >= 60 ? "bg-amber-500" : "bg-red-500"}`}
+            className={`h-10 w-fit flex justify-center items-center   text-white font-semibold rounded-xl border-2 solid p-5 ${score >= 80 ? "bg-green-500" : score >= 60 ? "bg-amber-500" : "bg-red-500"}`}
           >
-            {score > 90
+            {score > 80
               ? "Excellent"
               : score > 60
                 ? "Good"
@@ -47,10 +47,12 @@ const ScoreSection = () => {
           </div>
         </div>{" "}
         <br />
-        <div
-          className="h-3 rounded bg-green-500"
-          style={{ width: `${score}%` }}
-        ></div>
+        <div className="bg-gray-200 rounded">
+          <div  className="h-3 rounded bg-black"
+          style={{ width: `${score}%` }}>
+          </div>
+        </div>
+        <div className="font-sm mt-2 text-gray-500">Your resume is above average, but implementing the suggestions below will significantly improve your chances with recruiters and ATS systems.</div>
         <InsightSection/>
       </div>
     </div>
