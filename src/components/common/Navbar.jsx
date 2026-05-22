@@ -3,22 +3,21 @@ import React from "react";
 const Navbar = () => {
   return (
     <div>
-      <div className="w-full text-red-500 border-b-2 border-gray-300">
-        
-        <div className="flex w-[30%] gap-2.5 ml-9.75 p-1.25">
-          
-          <div className="icon">
-            Icon
+         <header className="border-b bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div className="flex items-center gap-3">
+            <div className="w-9 h-9 rounded-lg bg-blue-600 flex items-center justify-center">
+              <FileCheck className="w-5 h-5 text-white" />
+            </div>
+            <div>
+              <h1 className="text-xl font-semibold text-gray-900">
+                Scanstack
+              </h1>
+              <p className="text-xs text-gray-500">Resume Analysis</p>
+            </div>
           </div>
-
-          <div className="text-black">
-            ScanStack <br />
-            Resume analysis
-          </div>
-
         </div>
-
-      </div>
+      </header>
     </div>
   );
 };

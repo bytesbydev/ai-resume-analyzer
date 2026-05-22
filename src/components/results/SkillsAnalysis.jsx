@@ -17,9 +17,9 @@ Detected skills with estimated proficiency levels
           </p>
         </div>
       </div>  
-      <div className='technical-skills border-2 border-black solid h-fit rounded-2xl p-5 mb-5'>
+      <div className='technical-skills h-fit rounded-2xl p-5 mb-5'>
 <div>
-  <div className='flex flex-col gap-4'>
+  <div className='flex flex-col gap-4 rounded-2xl'>
     <SkillsCard title={"Technical Skills"} icon={<Code2 className='text-blue-600'/>}/>
     <SkillsCard title={"Soft Skills"} icon={<Users className='text-green-600'/>}/>
     <SkillsCard title={"Recommended Skills to add"} icon={<AlertCircle className='text-red-600'/>}/>

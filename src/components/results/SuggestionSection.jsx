@@ -2,7 +2,9 @@ import React from 'react'
 
 const SuggestionSection = () => {
   return (
-    <div>SuggestionSection</div>
+    <div>
+      <div></div>
+    </div>
   )
 }
 

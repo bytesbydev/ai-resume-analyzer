@@ -62,7 +62,7 @@ const SkillsCard = ({ title, icon }) => {
     }
   };
   const SkillItem = ({ skill }) => (
-    <div className="border rounded-2xl p-4">
+    <div className="border-2 border-gray-300 solid rounded-2xl p-4">
       <div className="flex justify-between">
         <div className="flex items-center gap-2">
           <h5 className="font-medium">{skill.label}</h5>
@@ -93,7 +93,7 @@ const SkillsCard = ({ title, icon }) => {
   );
 
   return (
-    <div className="border rounded-2xl p-5">
+    <div className="border-2 border-gray-300 solid rounded-2xl p-5">
       {/* Header */}
 
       <div className="flex items-center gap-3">
@@ -108,7 +108,7 @@ const SkillsCard = ({ title, icon }) => {
           ))}
         </div>
       ) : (
-      <div className="mt-6 border border-yellow-300 bg-yellow-50 rounded-2xl p-4">
+      <div className="mt-6 border-2 border-yellow-300 solid bg-yellow-50 rounded-2xl p-4">
   <p className="text-gray-700 mb-4">
     These skills are frequently requested in job postings for similar
     roles.
