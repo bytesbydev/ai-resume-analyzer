@@ -1,29 +1,42 @@
 import React from "react";
-import { House } from 'lucide-react';
+import { Home } from 'lucide-react';
 import { Download } from 'lucide-react';
+import { FileCheck } from "lucide-react";
 const ResultHeader = () => {
   return (
     <div>
-      <div className="w-full h-15 border-b-2 border-gray-300 flex justify-between items-center ">
-        <div className="flex h-10  text-red-500 w-[30%] gap-2.5 ml-9.75 p-1.25">
-          <div className="">Icon</div>
-          <span className="text-black text-lg font-medium">
-            ScanStack 
-            Resume analysis
-          </span>
-        </div>
-        <div className="h-10 w-100  solid flex items-center gap-4 justify-center">
-            <button className="border-gray cursor-pointer border-2 rounded-xl solid w-1/2 items-center justify-around font-bold flex h-full">
-              <div class=""><House/></div>
-              <div> 
-                New Analysis
+       <header className="border-b bg-white sticky top-0 z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <div className="w-9 h-9 rounded-lg bg-blue-600 flex items-center justify-center">
+                <FileCheck className="w-5 h-5 text-white" />
               </div>
-            </button>
-            <button className="border-gray rounded-xl flex items-center justify-around bg-blue-500 cursor-pointer font-bold text-white border-2 solid w-1/2 h-full mr-5">
-            <div><Download/>  </div>
-            <div>Export report</div></button>
+              <div>
+                <h1 className="text-xl font-semibold text-gray-900">
+                  Scanstack
+                </h1>
+                <p className="text-xs text-gray-500">Resume Analysis Results</p>
+              </div>
+            </div>
+            
+            <div className="flex items-center gap-3">
+              <button  className="flex items-center gap-2 border solid rounded-xl p-2">
+                <Home className="w-4 h-4 mr-2" />
+                New Analysis
+              </button>
+              <button 
+                className="bg-blue-600  rounded-xl items-center flex p-2 text-white hover:bg-blue-700"
+              >
+                <Download className="w-4 h-4 mr-2" />
+                Export Report
+              </button>
+            </div>
           </div>
-      </div>
+        </div>
+      </header>
+     
+     
     </div>
   );
 };
