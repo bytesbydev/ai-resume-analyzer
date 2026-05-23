@@ -21,12 +21,12 @@ const ResultHeader = () => {
             </div>
             
             <div className="flex items-center gap-3">
-              <button  className="flex items-center gap-2 border solid rounded-xl p-2">
-                <Home className="w-4 h-4 mr-2" />
+              <button  className="flex cursor-pointer items-center  border solid rounded-xl p-2">
+                <Home className="w-4 h-4 mr-2 font-semibold" />
                 New Analysis
               </button>
               <button 
-                className="bg-blue-600  rounded-xl items-center flex p-2 text-white hover:bg-blue-700"
+                className="bg-blue-600 cursor-pointer border solid  rounded-xl items-center flex p-2 text-white hover:bg-blue-700"
               >
                 <Download className="w-4 h-4 mr-2" />
                 Export Report

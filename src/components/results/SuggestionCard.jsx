@@ -64,9 +64,18 @@ const SuggestionCard = () => {
     },
   ];
   return (
-    <div>=
-
-
+    <div>
+  {suggestions.map((item,index)=>(
+<div key={index}>
+  <h3>{item.id}</h3>
+  <h3>{item.title}</h3>
+  <h3>{item.timeToFix}</h3>
+  <h3>{item.category}</h3>
+  <h3>{item.impact}</h3>
+  <h3>{item.before}</h3>
+  <h3>{item.after}</h3>
+  </div>
+  ))}
     </div>
   )
 }
