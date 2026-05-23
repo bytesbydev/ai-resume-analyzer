@@ -71,38 +71,37 @@ const SuggestionCard = () => {
     },
   ];
   return (
-    <div>
-      {/* {suggestions.map((item,index)=>(
-<div key={index}>
-  <h3>{item.id}</h3>
-  <h3>{item.title}</h3>
-  <h3>{item.timeToFix}</h3>
-  <h3>{item.category}</h3>
-  <h3>{item.impact}</h3>
-  <h3>{item.before}</h3>
-  <h3>{item.after}</h3>
-  </div>
-  ))} */}
+  <div>
+      <div className="flex flex-col gap-3" >
       <div className="p-3 font-medium border-3 rounded-2xl solid border-red-500">  High priority items have the most significant impact on recruitor perception and ats compatibility.</div>
-      <div className="flex gap-5">
+      </div>
+      {suggestions.map((item,index)=>(
+      <div className="flex flex-col gap-3">
+      <div className="flex gap-5" key={index}>
         {" "}
         <div><AlertCircle className="text-red-600"/></div>
-        <div className="font-semibold text-black">Quantify your achievements with specific metrics</div>
+        <div className="font-semibold text-black">
+          {item.title}
+        </div>
       </div>
-      <div>
+      <div className="flex justify-between gap-3 p-2 w-1/3">
         {" "}
-        <div className="text-red-600 border-2 solid rounded-2xl ">high priority</div>
-        <div>content</div>
-        <div>2.5 min per achievement</div>
+        <div className="text-red-600 border-2 p-2 solid border-red-500 bg-red-400 rounded-2xl font-semibold  ">
+        
+        {item.priority} priority</div>
+        <div className="font-medium text-gray-500 p-2 rounded-2xl border solid border-gray-600">{item.category}</div>
+        <div className="font-medium  text-center flex items-center">{item.timeToFix} per achievement</div>
       </div>
-      <span>Keeps resume focused on current technologies</span>
-      <div>
-        <span>Before</span> <p>Skills: jQuery, Flash, Internet Explorer 6</p>
+      <span className="">{item.impact}</span>
+      <div className="p-3 font-medium border-3 rounded-2xl solid border-red-500">
+        <span className="font-semibold text-red-500">Before</span> <p>{item.before}</p>
       </div>
-      <div>
-        <span>after</span>{" "}
-        <p>Skills: React, Vue.js, Modern JavaScript (ES6+)</p>
+      <div  className="p-3 font-medium border-3 rounded-2xl solid border-green-500">
+        <span className="text-green-500 font-semibold">After</span>{" "}
+        <p className="font-medium text-gray-500">{item.after}</p>
       </div>
+    </div>
+  ))}
     </div>
   );
 };
