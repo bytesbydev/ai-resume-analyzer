@@ -114,7 +114,7 @@ const SuggestionSection = () => {
         </div>
       </div>
       <div className="flex space-y-6 flex-col mt-8">
-        <div className="p-3 font-medium border-3 rounded-2xl border-red-500">
+        <div className={`p-3 font-medium border-3 rounded-2xl $border-red-500`}>
   {selected === "high" ? (
     <span>
       High priority items have the most significant impact on recruiter
@@ -133,7 +133,7 @@ const SuggestionSection = () => {
   )}
 </div>
         {filterdSuggestion.map((item, index) => (
-          <SuggestionCard key={index} suggestions={item} />
+          <SuggestionCard key={index} priority={selected} suggestions={item} />
         ))}
       </div>
     </div>
