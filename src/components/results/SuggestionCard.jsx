@@ -4,9 +4,8 @@ import React from "react";
 const SuggestionCard = ({suggestions}) => { 
   return (
     <div>
-  <div className="border-2 solid mt-10">
     
-      <div className="flex flex-col gap-3 border-2 solid mt-10">
+      <div className="flex flex-col gap-3 border-2 p-5 border-gray-300 rounded-3xl">
       <div className="flex gap-5" >
         {" "}
         <div><AlertCircle className="text-red-600"/></div>
@@ -31,7 +30,6 @@ const SuggestionCard = ({suggestions}) => {
         <p className="font-medium text-gray-500">{suggestions.after}</p>
       </div>
     </div>    </div>
-    </div>
   );
 };
 

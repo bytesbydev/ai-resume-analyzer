@@ -113,30 +113,25 @@ const SuggestionSection = () => {
           Low priority
         </div>
       </div>
-      <div>
-        <div className="flex flex-col gap-3">
-          <div className="p-3 font-medium border-3 rounded-2xl solid border-red-500">
-            {selected === "high" ? (
-              <span>
-                High priority items have the most significant impact on
-                recruiter perception and ATS compatibility. Address these first.
-              </span> ? (
-                selected === "medium"
-              ) : (
-                <span>
-                  Medium priority items will improve your resume quality and
-                  help you stand out from other candidates.
-                </span>
-              )
-            ) : (
-              <span>
-                Low priority items provide small refinements that enhance
-                overall presentation and create a more polished professional
-                impressions.
-              </span>
-            )}
-          </div>
-        </div>
+      <div className="flex space-y-6 flex-col mt-8">
+        <div className="p-3 font-medium border-3 rounded-2xl border-red-500">
+  {selected === "high" ? (
+    <span>
+      High priority items have the most significant impact on recruiter
+      perception and ATS compatibility. Address these first.
+    </span>
+  ) : selected === "medium" ? (
+    <span>
+      Medium priority items will improve your resume quality and help you
+      stand out from other candidates.
+    </span>
+  ) : (
+    <span>
+      Low priority items provide small refinements that enhance overall
+      presentation and create a more polished professional impression.
+    </span>
+  )}
+</div>
         {filterdSuggestion.map((item, index) => (
           <SuggestionCard key={index} suggestions={item} />
         ))}
