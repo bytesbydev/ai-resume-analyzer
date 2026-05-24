@@ -75,6 +75,8 @@ const SuggestionSection = () => {
   const filterdSuggestion = suggestions.filter(
     (item) => item.priority === selected,
   );
+  const totalTime=filterdSuggestion.reduce((sum,item)=>sum+parseInt(item.timeToFix),0)
+  console.log(totalTime)
   console.log(selected);
   return (
     <div>
@@ -114,7 +116,8 @@ const SuggestionSection = () => {
         </div>
       </div>
       <div className="flex space-y-6 flex-col mt-8">
-        <div className={`p-3 font-medium border-3 rounded-2xl $border-red-500`}>
+        <div className={`p-3 font-medium border-3 rounded-2xl ${selected==="high"?"border-red-500" : selected==="medium" ? "border-amber-700":"border-blue-700"}`}>
+ 
   {selected === "high" ? (
     <span>
       High priority items have the most significant impact on recruiter
@@ -135,6 +138,15 @@ const SuggestionSection = () => {
         {filterdSuggestion.map((item, index) => (
           <SuggestionCard key={index} priority={selected} suggestions={item} />
         ))}
+      </div>
+        <div className="mt-6 pt-6 border-t border-gray-200">
+        <div className="flex items-center justify-between text-sm">
+          <div className="text-gray-600">
+            <span className="font-medium text-gray-900">{filterdSuggestion.length}</span> {selected} priority items
+            <span className="mx-2">•</span>
+            Estimated time to address all: <span className="font-medium text-gray-900">{totalTime} minutes</span>
+          </div>
+        </div>
       </div>
     </div>
   );
