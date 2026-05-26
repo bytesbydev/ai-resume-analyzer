@@ -31,11 +31,11 @@ const SuggestionCard = ({ suggestions, priority }) => {
         <div className="flex flex-wrap items-center gap-4">
           {" "}
           <div
-            className={` border-2 p-2 ${styles.badge} rounded-md font-semibold`}
+            className={` border-2 p-2 ${styles.badge} rounded-md text-xs font-medium`}
           >
             {suggestions.priority} priority
           </div>
-          <div className="bg-slate-50 text-slate-700 border-slate-200 text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground">
+          <div className="bg-slate-50 text-slate-700 p-2  text-xs font-medium rounded-md border-slate-200 ">
             {suggestions.category}
           </div>
           <div className="text-xs text-gray-500">
@@ -45,7 +45,7 @@ const SuggestionCard = ({ suggestions, priority }) => {
        <p className="text-sm text-gray-600  mb-3">
                 {suggestions.impact}
               </p>
-        <div className="gap-3">
+        <div className="gap-3 flex flex-col ">
           <div className="p-3 rounded-lg bg-red-50 border border-red-200">
             <p className="text-xs font-medium text-red-700 mb-1">Before:</p>
             <p className="text-sm text-gray-700">{suggestions.before}</p>
