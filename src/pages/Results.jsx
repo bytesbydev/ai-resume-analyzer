@@ -3,6 +3,7 @@ import ResultHeader from '../components/results/ResultHeader'
 import ScoreSection from '../components/results/ScoreSection'
 import SkillsAnalysis from '../components/results/SkillsAnalysis'
 import SuggestionSection from '../components/results/SuggestionSection'
+import ReccomendedSkills from '../components/results/RecomendedSkills'
 const Results = () => {
   return (
     <div>
@@ -24,6 +25,9 @@ const Results = () => {
         </div>
         <div className='suggestions-section rounded-3xl section p-5 border-2 border-gray-300 solid mt-5'>
 <SuggestionSection/>
+        </div>
+        <div className='insight-section rounded-3xl section p-5 border-2 border-gray-300 solid mt-5'>
+          <ReccomendedSkills/>
         </div>
           </div>
         </main>
