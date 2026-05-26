@@ -1,5 +1,5 @@
 import React from "react";
-import { Award } from "lucide-react";
+import { Award,Target,FileCheck,Eye } from "lucide-react";
 const ReccomendedSkills = () => {
    const atsScore = 68;
   const readabilityScore = 85;
@@ -47,6 +47,52 @@ const ReccomendedSkills = () => {
           </p>
         </div>
       </div>
+       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+        <div className="p-4 rounded-lg border border-gray-200 bg-white">
+          <div className="flex items-center gap-2 mb-2">
+            <Target className="w-4 h-4 text-blue-600" />
+            <h4 className="text-sm font-medium text-gray-700">
+              ATS Score
+            </h4>
+          </div>
+          <p className="text-3xl font-semibold text-gray-900 mb-2">
+            {atsScore}%
+          </p>
+          {/* <Progress value={atsScore} className="h-2 mb-2" /> */}
+          <p className="text-xs text-gray-600">
+            {atsScore >= 80 ? "Good" : atsScore >= 60 ? "Fair" : "Needs work"}
+          </p>
+        </div>
+     <div className="p-4 rounded-lg border border-gray-200 bg-white">
+          <div className="flex items-center gap-2 mb-2">
+            <Eye className="w-4 h-4 text-green-600" />
+            <h4 className="text-sm font-medium text-gray-700">
+              Readability
+            </h4>
+          </div>
+          <p className="text-3xl font-semibold text-gray-900 mb-2">
+            {readabilityScore}%
+          </p>
+          <p className="text-xs text-gray-600">
+            Easy to scan
+          </p>
+        </div>
+     <div className="p-4 rounded-lg border border-gray-200 bg-white">
+          <div className="flex items-center gap-2 mb-2">
+            <FileCheck className="w-4 h-4 text-amber-600" />
+            <h4 className="text-sm font-medium text-gray-700">
+              Word Count
+            </h4>
+          </div>
+          <p className="text-3xl font-semibold text-gray-900 mb-2">
+            {wordCount}
+          </p>
+          <div className="h-2 mb-2" /> {/* Spacer */}
+          <p className="text-xs text-gray-600">
+            Optimal: 400-600
+          </p>
+        </div>
+    </div>
     </div>
   );
 };
