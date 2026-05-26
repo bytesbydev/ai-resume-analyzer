@@ -48,7 +48,7 @@ const ReccomendedSkills = () => {
           </p>
         </div>
       </div>
-       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+       <div className="grid md:grid-cols-2 mt-6 lg:grid-cols-4 gap-4 mb-8">
         <div className="p-4 rounded-lg border border-gray-200 bg-white">
           <div className="flex items-center gap-2 mb-2">
             <Target className="w-4 h-4 text-blue-600" />
@@ -59,7 +59,7 @@ const ReccomendedSkills = () => {
           <p className="text-3xl font-semibold text-gray-900 mb-2">
             {atsScore}%
           </p>
-          {/* <Progress value={atsScore} className="h-2 mb-2" /> */}
+          <ProgressBar progress={atsScore} className="h-2 mb-2" />
           <p className="text-xs text-gray-600">
             {atsScore >= 80 ? "Good" : atsScore >= 60 ? "Fair" : "Needs work"}
           </p>
@@ -74,7 +74,7 @@ const ReccomendedSkills = () => {
           <p className="text-3xl font-semibold text-gray-900 mb-2">
             {readabilityScore}%
           </p>
-            <ProgressBar style={{ width: `${=readabilityScore={}}%` }} className="h-2 mb-2" />
+            <ProgressBar progress={readabilityScore} className="h-2 mb-2" />
           <p className="text-xs text-gray-600">
             Easy to scan
           </p>
@@ -89,7 +89,6 @@ const ReccomendedSkills = () => {
           <p className="text-3xl font-semibold text-gray-900 mb-2">
             {wordCount}
           </p>
-            <ProgressBar style={{ width: `${wordCount}%` }} className="h-2 mb-2" />
           <div className="h-2 mb-2" /> {/* Spacer */}
           <p className="text-xs text-gray-600">
             Optimal: 400-600
@@ -105,7 +104,7 @@ const ReccomendedSkills = () => {
           <p className="text-3xl font-semibold text-gray-900 mb-2">
             {keywordMatch}%
           </p>
-          <ProgressBar style={{ width: `${keywordMatch}%` }} className="h-2 mb-2" />
+          <ProgressBar progress={keywordMatch}className="h-2 mb-2" />
           <p className="text-xs text-gray-600">
             vs. job postings
           </p>
