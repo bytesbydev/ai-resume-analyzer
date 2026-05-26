@@ -1,5 +1,6 @@
 import React from "react";
-import { Award,Target,FileCheck,Eye } from "lucide-react";
+import { Award,Target,FileCheck,Eye,TrendingUp} from "lucide-react";
+import ProgressBar from "../common/ProgressBar";
 const ReccomendedSkills = () => {
    const atsScore = 68;
   const readabilityScore = 85;
@@ -73,6 +74,7 @@ const ReccomendedSkills = () => {
           <p className="text-3xl font-semibold text-gray-900 mb-2">
             {readabilityScore}%
           </p>
+            <ProgressBar style={{ width: `${=readabilityScore={}}%` }} className="h-2 mb-2" />
           <p className="text-xs text-gray-600">
             Easy to scan
           </p>
@@ -87,9 +89,25 @@ const ReccomendedSkills = () => {
           <p className="text-3xl font-semibold text-gray-900 mb-2">
             {wordCount}
           </p>
+            <ProgressBar style={{ width: `${wordCount}%` }} className="h-2 mb-2" />
           <div className="h-2 mb-2" /> {/* Spacer */}
           <p className="text-xs text-gray-600">
             Optimal: 400-600
+          </p>
+        </div>
+        <div className="p-4 rounded-lg border border-gray-200 bg-white">
+          <div className="flex items-center gap-2 mb-2">
+            <TrendingUp className="w-4 h-4 text-purple-600" />
+            <h4 className="text-sm font-medium text-gray-700">
+              Keyword Match
+            </h4>
+          </div>
+          <p className="text-3xl font-semibold text-gray-900 mb-2">
+            {keywordMatch}%
+          </p>
+          <ProgressBar style={{ width: `${keywordMatch}%` }} className="h-2 mb-2" />
+          <p className="text-xs text-gray-600">
+            vs. job postings
           </p>
         </div>
     </div>
