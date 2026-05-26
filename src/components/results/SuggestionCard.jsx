@@ -1,50 +1,62 @@
 import { AlertCircle } from "lucide-react";
 import React from "react";
 
-const SuggestionCard = ({suggestions,priority}) => { 
-  const getPriorityColors=(priority)=>({
-    high:{
-      icon:"text-red-600",
-      badge:"bg-red-100 text-red-700 border-red-700",
-    },
-    medium:{
-      icon:"text-amber-500",
-          badge:"bg-amber-100 text-amber-700 border-amber-700"
-    },
-    low:{
-      icon:"text-blue-500",
-          badge:"bg-blue-100 text-blue-700 border-blue-700"
-    },
-  }[priority]
-  )
-  const styles=getPriorityColors(priority)
+const SuggestionCard = ({ suggestions, priority }) => {
+  const getPriorityColors = (priority) =>
+    ({
+      high: {
+        icon: "text-red-600",
+        badge: "bg-red-50 text-red-700 border-red-200",
+      },
+      medium: {
+        icon: "text-amber-500",
+        badge: "bg-amber-50 text-amber-700 border-amber-200",
+      },
+      low: {
+        icon: "text-blue-500",
+        badge: "bg-blue-50 text-blue-700 border-blue-200",
+      },
+    })[priority];
+  const styles = getPriorityColors(priority);
   return (
     <div>
       <div className="flex flex-col gap-3 border-2 p-5 border-gray-300 rounded-3xl">
-      <div className="flex gap-5" >
-        {" "}
-        <div><AlertCircle className={`${styles.icon}`}/></div>
-        <div className="font-semibold text-black">
-          {suggestions.title}
+        <div className="flex gap-5">
+          {" "}
+          <div>
+            <AlertCircle className={`${styles.icon}`} />
+          </div>
+          <div className="font-semibold text-black">{suggestions.title}</div>
+        </div>
+        <div className="flex flex-wrap items-center gap-4">
+          {" "}
+          <div
+            className={` border-2 p-2 ${styles.badge} rounded-md font-semibold`}
+          >
+            {suggestions.priority} priority
+          </div>
+          <div className="bg-slate-50 text-slate-700 border-slate-200 text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground">
+            {suggestions.category}
+          </div>
+          <div className="text-xs text-gray-500">
+            {suggestions.timeToFix} 
+          </div>
+        </div>
+       <p className="text-sm text-gray-600  mb-3">
+                {suggestions.impact}
+              </p>
+        <div className="gap-3">
+          <div className="p-3 rounded-lg bg-red-50 border border-red-200">
+            <p className="text-xs font-medium text-red-700 mb-1">Before:</p>
+            <p className="text-sm text-gray-700">{suggestions.before}</p>
+          </div>
+          <div className="p-3 rounded-lg bg-red-50 border border-red-200">
+            <p className="text-xs font-medium text-green-700 mb-1">After:</p>
+            <p className="text-sm text-gray-700">{suggestions.after}</p>
+          </div>
         </div>
       </div>
-      <div className="flex justify-between gap-3 p-2 w-1/3">
-        {" "}
-        <div className={` border-2 p-2 ${styles.badge} rounded-2xl font-semibold`}>
-        
-        {suggestions.priority} priority</div>
-        <div className="font-medium text-gray-500 p-2 rounded-2xl border solid border-gray-600">{suggestions.category}</div>
-        <div className="font-medium  text-center flex suggestionss-center">{suggestions.timeToFix} per achievement</div>
-      </div>
-      <span className="">{suggestions.impact}</span>
-      <div className="p-3 font-medium border-3 rounded-2xl solid border-red-500">
-        <span className="font-semibold text-red-500">Before</span> <p>{suggestions.before}</p>
-      </div>
-      <div  className="p-3 font-medium border-3 rounded-2xl solid border-green-500">
-        <span className="text-green-500 font-semibold">After</span>{" "}
-        <p className="font-medium text-gray-500">{suggestions.after}</p>
-      </div>
-    </div>    </div>
+    </div>
   );
 };
 
