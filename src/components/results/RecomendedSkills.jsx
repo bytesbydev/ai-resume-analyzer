@@ -50,52 +50,62 @@ const ReccomendedSkills = () => {
     { aspect: "Format", yourScore: 88, industry: 80 },
   ];
 
-  const trendingKeywords = [
-    { keyword: "React", frequency: 95, inResume: true },
-    { keyword: "TypeScript", frequency: 88, inResume: true },
-    { keyword: "Cloud/AWS", frequency: 85, inResume: false },
-    { keyword: "Microservices", frequency: 82, inResume: false },
-    { keyword: "CI/CD", frequency: 78, inResume: true },
-    { keyword: "Agile", frequency: 75, inResume: false },
-  ];
-   const sectionScores = {
-    labels: ["Skills", "Projects", "Experience", "Education"],
+  // const trendingKeywords = [
+  //   { keyword: "React", frequency: 95, inResume: true },
+  //   { keyword: "TypeScript", frequency: 88, inResume: true },
+  //   { keyword: "Cloud/AWS", frequency: 85, inResume: false },
+  //   { keyword: "Microservices", frequency: 82, inResume: false },
+  //   { keyword: "CI/CD", frequency: 78, inResume: true },
+  //   { keyword: "Agile", frequency: 75, inResume: false },
+  // ];
+  // ================= BAR CHART DATA =================
+
+  const sectionChartData = {
+    labels: sectionScores.map((item) => item.section),
 
     datasets: [
       {
         label: "Score",
-        data: [85, 55, 92, 75],
+        data: sectionScores.map((item) => item.score),
+
         backgroundColor: "#2563EB",
+
         borderRadius: 6,
       },
     ],
   };
 
-  // ================= RADAR DATA =================
+  // ================= RADAR CHART DATA =================
 
-  const industryComparison = {
-    labels: [
-      "ATS Score",
-      "Skills",
-      "Projects",
-      "Experience",
-      "Formatting",
-    ],
+  const radarChartData = {
+    labels: industryComparison.map((item) => item.aspect),
 
     datasets: [
       {
         label: "Your Resume",
-        data: [82, 90, 55, 92, 88],
+
+        data: industryComparison.map(
+          (item) => item.yourScore
+        ),
+
         backgroundColor: "rgba(37,99,235,0.3)",
+
         borderColor: "#2563EB",
+
         borderWidth: 2,
       },
 
       {
         label: "Industry Avg",
-        data: [70, 75, 72, 80, 78],
+
+        data: industryComparison.map(
+          (item) => item.industry
+        ),
+
         backgroundColor: "rgba(16,185,129,0.2)",
+
         borderColor: "#10B981",
+
         borderWidth: 2,
       },
     ],
@@ -122,7 +132,7 @@ const ReccomendedSkills = () => {
 
   const radarOptions = {
     responsive: true,
-
+maintainAspectRatio:false,
     plugins: {
       legend: {
         position: "bottom",
@@ -136,6 +146,7 @@ const ReccomendedSkills = () => {
       },
     },
   };
+
   return (
     <div>
       {" "}
@@ -216,59 +227,48 @@ const ReccomendedSkills = () => {
     </div>
     {/* insights section */}
 <div>
-  <div className="grid lg:grid-cols-2 gap-6 mb-6">
+    <div className="grid lg:grid-cols-2 gap-6">
 
-      {/* SECTION COMPLETENESS */}
+      {/* BAR CHART */}
 
-      <div className="p-5 rounded-2xl border border-gray-200 bg-slate-50">
+      <div className="p-5 rounded-2xl border border-gray-200 bg-white">
 
-        <h4 className="font-medium text-gray-900 mb-4 flex items-center gap-2">
-          <Info className="w-4 h-4 text-gray-500" />
+        <h2 className="font-semibold mb-4">
           Section Completeness
-        </h4>
+        </h2>
 
-        <div className="h-[250px]">
+        <div className="h-75">
 
           <Bar
-            data={sectionScores}
+            data={sectionChartData}
             options={barOptions}
           />
 
         </div>
 
-        <p className="text-xs text-gray-600 mt-3">
-          Weakest section: Projects (55%) - consider expanding with
-          more detail
-        </p>
-
       </div>
 
-      {/* INDUSTRY BENCHMARK */}
+      {/* RADAR CHART */}
 
-      <div className="p-5 rounded-2xl border border-gray-200 bg-slate-50">
+      <div className="p-5 rounded-2xl border border-gray-200 bg-white">
 
-        <h4 className="font-medium text-gray-900 mb-4 flex items-center gap-2">
-          <TrendingUp className="w-4 h-4 text-gray-500" />
+        <h2 className="font-semibold mb-4">
           Industry Benchmark
-        </h4>
+        </h2>
 
-        <div className="h-[250px]">
+        <div className="h-75 justify-center flex items-center">
 
           <Radar
-            data={industryComparison}
+            data={radarChartData}
             options={radarOptions}
           />
 
         </div>
 
-        <p className="text-xs text-gray-600 mt-3">
-          Your resume ranks in the <strong>top 45%</strong> compared
-          to industry standards
-        </p>
-
       </div>
 
     </div>
+
 </div>
     </div>
   );
