@@ -95,21 +95,21 @@ const SuggestionSection = () => {
       </div>
       <div className="flex justify-between bg-gray-300  rounded-4xl p-2 gap-3 mt-7">
         <div
-          className={`w-1/3 flex justify-center ${selected === "high" ? "bg-white" : "bg-gray-300"} rounded-3xl p-2 font-seri font-medium`}
+          className={`w-1/3 flex justify-center ${selected === "high" ? "bg-white" : "bg-gray-300"} rounded-3xl cursor-pointer p-2 font-seri font-medium`}
           onClick={() => setSelected("high")}
         >
           High priority
         </div>
 
         <div
-          className={`w-1/3 flex justify-center rounded-3xl p-2 font-seri font-medium ${selected === "medium" ? "bg-white" : "bg-gray-300"}`}
+          className={`w-1/3 flex justify-center rounded-3xl cursor-pointer p-2 font-seri font-medium ${selected === "medium" ? "bg-white" : "bg-gray-300"}`}
           onClick={() => setSelected("medium")}
         >
           Medium priority
         </div>
 
         <div
-          className={`w-1/3 flex justify-center rounded-3xl p-2 font-seri font-medium ${selected === "low" ? "bg-white" : "bg-gray-300"}`}
+          className={`w-1/3 flex justify-center rounded-3xl cursor-pointer p-2 font-seri font-medium ${selected === "low" ? "bg-white" : "bg-gray-300"}`}
           onClick={() => setSelected("low")}
         >
           Low priority

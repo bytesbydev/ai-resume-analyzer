@@ -110,6 +110,8 @@ const ReccomendedSkills = () => {
           </p>
         </div>
     </div>
+    {/* insights section */}
+<div></div>
     </div>
   );
 };
