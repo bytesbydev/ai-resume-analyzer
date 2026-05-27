@@ -33,31 +33,31 @@ const ReccomendedSkills = () => {
   const wordCount = 425;
   const keywordMatch = 62;
 
-  // const sectionScores = [
-  //   { section: "Contact", score: 100 },
-  //   { section: "Summary", score: 75 },
-  //   { section: "Experience", score: 85 },
-  //   { section: "Education", score: 90 },
-  //   { section: "Skills", score: 65 },
-  //   { section: "Projects", score: 55 },
-  // ];
+  const sectionScores = [
+    { section: "Contact", score: 100 },
+    { section: "Summary", score: 75 },
+    { section: "Experience", score: 85 },
+    { section: "Education", score: 90 },
+    { section: "Skills", score: 65 },
+    { section: "Projects", score: 55 },
+  ];
 
-  // const industryComparison = [
-  //   { aspect: "Experience", yourScore: 85, industry: 78 },
-  //   { aspect: "Skills", yourScore: 65, industry: 82 },
-  //   { aspect: "Education", yourScore: 90, industry: 75 },
-  //   { aspect: "Keywords", yourScore: 62, industry: 85 },
-  //   { aspect: "Format", yourScore: 88, industry: 80 },
-  // ];
+  const industryComparison = [
+    { aspect: "Experience", yourScore: 85, industry: 78 },
+    { aspect: "Skills", yourScore: 65, industry: 82 },
+    { aspect: "Education", yourScore: 90, industry: 75 },
+    { aspect: "Keywords", yourScore: 62, industry: 85 },
+    { aspect: "Format", yourScore: 88, industry: 80 },
+  ];
 
-  // const trendingKeywords = [
-  //   { keyword: "React", frequency: 95, inResume: true },
-  //   { keyword: "TypeScript", frequency: 88, inResume: true },
-  //   { keyword: "Cloud/AWS", frequency: 85, inResume: false },
-  //   { keyword: "Microservices", frequency: 82, inResume: false },
-  //   { keyword: "CI/CD", frequency: 78, inResume: true },
-  //   { keyword: "Agile", frequency: 75, inResume: false },
-  // ];
+  const trendingKeywords = [
+    { keyword: "React", frequency: 95, inResume: true },
+    { keyword: "TypeScript", frequency: 88, inResume: true },
+    { keyword: "Cloud/AWS", frequency: 85, inResume: false },
+    { keyword: "Microservices", frequency: 82, inResume: false },
+    { keyword: "CI/CD", frequency: 78, inResume: true },
+    { keyword: "Agile", frequency: 75, inResume: false },
+  ];
    const sectionScores = {
     labels: ["Skills", "Projects", "Experience", "Education"],
 
