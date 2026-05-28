@@ -94,7 +94,7 @@ const ChartsSection = ({
           Section Completeness
         </h2>
 
-        <div className="h-[300px]">
+        <div className="h-75">
 
           <Bar data={sectionChartData} />
 
@@ -110,7 +110,7 @@ const ChartsSection = ({
           Industry Benchmark
         </h2>
 
-        <div className="h-[300px]">
+        <div className="h-75">
 
           <Radar data={radarChartData} />
 
