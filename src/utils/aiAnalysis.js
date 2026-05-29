@@ -1,93 +1,203 @@
-import { GoogleGenAI } from "@google/genai";
+// utils/aiAnalysis.js
 
-// Gemini client setup
-const ai = new GoogleGenAI({
-  apiKey: import.meta.env.VITE_GEMINI_API_KEY,
-});
+const aiAnalysis = async (resumeText) => {
 
-/**
- * AI Resume Analysis using Gemini
- */
-export const aiAnalysis = async (rawText, parsedData) => {
-  try {
-    if (!rawText) throw new Error("No resume text provided");
+  const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 
-    const prompt = `
-You are an expert ATS Resume Analyzer.
+  const prompt = `
+You are an advanced ATS Resume Analyzer.
 
-Analyze the following resume carefully.
+Analyze the following resume and return ONLY valid JSON.
 
-====================================
-RAW RESUME TEXT:
-====================================
-${rawText}
+Rules:
+- Do not include markdown
+- Do not include explanation
+- Do not wrap in backticks
+- Return clean JSON only
+- Generate realistic ATS analysis
+- Scores must be between 0-100
+- Keep response professional
 
-====================================
-PARSED RESUME DATA:
-====================================
-${JSON.stringify(parsedData, null, 2)}
+Return response in this exact structure:
 
-====================================
-RULES:
-====================================
-- Return ONLY valid JSON
-- No markdown, no explanation, no backticks
-- ATS score must be 0-100
-- Minimum 3 strengths, 3 weaknesses, 5 suggestions
-
-====================================
-OUTPUT FORMAT:
-====================================
 {
-  "atsScore": 0,
-  "strengths": [],
-  "weaknesses": [],
-  "suggestions": [],
-  "recommendedSkills": [],
-  "sectionBreakdown": {
-    "skills": 0,
-    "experience": 0,
-    "projects": 0,
-    "education": 0
+  "basicInfo": {
+    "name": "",
+    "email": "",
+    "phone": "",
+    "linkedin": "",
+    "github": "",
+    "portfolio": "",
+    "location": "",
+    "summary": ""
   },
-  "summaryFeedback": "",
-  "experienceFeedback": "",
-  "projectsFeedback": "",
-  "certificationsFeedback": "",
-  "overallSummary": ""
+
+  "strengths": [
+    {
+      "label": "",
+      "severity": ""
+    }
+  ],
+
+  "improvements": [
+    {
+      "label": "",
+      "severity": ""
+    }
+  ],
+
+  "criticalIssues": [
+    {
+      "label": "",
+      "severity": ""
+    }
+  ],
+
+  "statsData": {
+    "atsScore": 0,
+    "readabilityScore": 0,
+    "wordCount": 0,
+    "keywordMatch": 0
+  },
+
+  "sectionScores": [
+    {
+      "section": "",
+      "score": 0
+    }
+  ],
+
+  "industryComparison": [
+    {
+      "aspect": "",
+      "yourScore": 0,
+      "industry": 0
+    }
+  ],
+
+  "trendingKeywords": [
+    {
+      "keyword": "",
+      "frequency": 0,
+      "inResume": true
+    }
+  ],
+
+  "atsAnalysis": [
+    {
+      "title": "",
+      "description": "",
+      "type": ""
+    }
+  ],
+
+  "performanceStats": [
+    {
+      "label": "",
+      "value": ""
+    }
+  ],
+
+  "skillCategories": [
+    {
+      "section": "",
+      "score": 0
+    }
+  ],
+
+  "technicalSkills": [
+    {
+      "label": "",
+      "level": "",
+      "proficiency": 0
+    }
+  ],
+
+  "softSkills": [
+    {
+      "label": "",
+      "level": "",
+      "proficiency": 0
+    }
+  ],
+
+  "recommendedSkills": [
+    {
+      "label": "",
+      "severity": ""
+    }
+  ],
+
+  "suggestions": [
+    {
+      "id": "",
+      "title": "",
+      "priority": "",
+      "category": "",
+      "impact": "",
+      "before": "",
+      "after": "",
+      "timeToFix": ""
+    }
+  ]
 }
+
+Resume:
+${resumeText}
 `;
 
-    // Call Gemini
-    const response = await ai.models.generateContent({
-      model: "gemini-3-flash-preview",
-      contents: prompt,
-    });
+  try {
 
-    const aiText = response?.text;
+    const response = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`,
+      {
+        method: "POST",
 
-    if (!aiText) {
-      throw new Error("Empty response from Gemini");
+        headers: {
+          "Content-Type": "application/json",
+        },
+
+        body: JSON.stringify({
+          contents: [
+            {
+              parts: [
+                {
+                  text: prompt,
+                },
+              ],
+            },
+          ],
+        }),
+      }
+    );
+
+    const data = await response.json();
+
+    const rawText =
+      data.candidates?.[0]?.content?.parts?.[0]?.text;
+
+    if (!rawText) {
+      throw new Error("No AI response generated");
     }
 
-    // Clean response (remove markdown if any)
-    const cleanedText = aiText
+    // CLEAN JSON RESPONSE
+
+    const cleanedText = rawText
       .replace(/```json/g, "")
       .replace(/```/g, "")
       .trim();
 
-    let parsed;
+    return JSON.parse(cleanedText);
 
-    try {
-      parsed = JSON.parse(cleanedText);
-    } catch (err) {
-      console.error("JSON Parse Error. Raw output:", cleanedText,err);
-      throw new Error("Invalid JSON returned by AI");
-    }
-
-    return parsed;
   } catch (error) {
+
     console.error("AI Analysis Error:", error);
-    return null;
+
+    return {
+      error: "Failed to analyze resume",
+    };
+
   }
 };
+
+export default aiAnalysis;
