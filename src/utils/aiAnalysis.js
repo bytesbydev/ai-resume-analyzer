@@ -1,6 +1,4 @@
-// utils/aiAnalysis.js
-
-const aiAnalysis = async (resumeText) => {
+const aiAnalysis = async (resumeData) => {
 
   const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 
@@ -143,13 +141,13 @@ Return response in this exact structure:
 }
 
 Resume:
-${resumeText}
+${JSON.stringify(resumeData)}
 `;
 
   try {
 
     const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`,
       {
         method: "POST",
 
