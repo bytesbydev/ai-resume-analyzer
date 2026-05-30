@@ -3,19 +3,26 @@ import Navbar from "../components/common/Navbar";
 import HeroSection from "../components/Home/HeroSection";
 import UploadBox from "../components/Home/UploadBox";
 import FeatureSection from "../components/Home/FeatureSection";
-
+import { useEffect } from "react";
+import { testGemini } from "../utils/testGemini";
 const Home = () => {
+  useEffect(() => {
+  testGemini();
+}, []);
   return (
     <div className="home-container">
       <Navbar />
-      <div className="h-fit w-full flex justify-center pb-[50px">
-   <main className="h-fit w-6/12">
-        <HeroSection/>
-        <UploadBox/>
-     <FeatureSection/>
-   </main>
-   </div>
-     </div>
+
+      <div className="h-fit w-full flex justify-center pb-12.5">
+        <main className="h-fit w-6/12">
+          <HeroSection />
+
+          <UploadBox />
+
+          <FeatureSection />
+        </main>
+      </div>
+    </div>
   );
 };
 
