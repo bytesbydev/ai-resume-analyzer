@@ -1,4 +1,3 @@
-// src/utils/analyzeResume.js
 
 export const analyzeResume = (text = "") => {
 
