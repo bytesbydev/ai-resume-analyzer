@@ -28,59 +28,66 @@ ChartJS.register(
 );
 
 const ChartsSection = ({
-  sectionScores,
-  industryComparison,
+  sectionScores = [],
+  industryComparison = [],
 }) => {
 
-  const sectionChartData = {
-    labels: sectionScores.map((item) => item.section),
+const sectionChartData = {
+  labels: sectionScores.map((item) => item.section),
 
-    datasets: [
-      {
-        label: "Score",
+  datasets: [
+    {
+      label: "Score",
+      data: sectionScores.map((item) => item.score),
+      backgroundColor: "#2563EB",
+      borderRadius: 6,
+    },
+  ],
+};
 
-        data: sectionScores.map((item) => item.score),
+const radarChartData = {
+  labels: industryComparison.map((item) => item.aspect),
 
-        backgroundColor: "#2563EB",
+  datasets: [
+    {
+      label: "Your Resume",
+      data: industryComparison.map((item) => item.yourScore),
+      backgroundColor: "rgba(37,99,235,0.3)",
+      borderColor: "#2563EB",
+      borderWidth: 2,
+    },
+    {
+      label: "Industry Avg",
+      data: industryComparison.map((item) => item.industry),
+      backgroundColor: "rgba(16,185,129,0.2)",
+      borderColor: "#10B981",
+      borderWidth: 2,
+    },
+  ],
+};
 
-        borderRadius: 6,
+const radarOptions = {
+  maintainAspectRatio: false,
+
+  plugins: {
+    legend: {
+      position: "bottom",
+    },
+  },
+
+  scales: {
+    r: {
+      beginAtZero: true,
+      max: 100,
+
+      pointLabels: {
+        font: {
+          size: 14,
+        },
       },
-    ],
-  };
-
-  const radarChartData = {
-    labels: industryComparison.map((item) => item.aspect),
-
-    datasets: [
-      {
-        label: "Your Resume",
-
-        data: industryComparison.map(
-          (item) => item.yourScore
-        ),
-
-        backgroundColor: "rgba(37,99,235,0.3)",
-
-        borderColor: "#2563EB",
-
-        borderWidth: 2,
-      },
-
-      {
-        label: "Industry Avg",
-
-        data: industryComparison.map(
-          (item) => item.industry
-        ),
-
-        backgroundColor: "rgba(16,185,129,0.2)",
-
-        borderColor: "#10B981",
-
-        borderWidth: 2,
-      },
-    ],
-  };
+    },
+  },
+};
 
   return (
 
@@ -110,11 +117,12 @@ const ChartsSection = ({
           Industry Benchmark
         </h2>
 
-        <div className="h-75">
-
-          <Radar data={radarChartData} />
-
-        </div>
+        <div className="h-75 flex justify-center items-center">
+  <Radar
+    data={radarChartData}
+    options={radarOptions}
+  />
+</div>
 
       </div>
 
