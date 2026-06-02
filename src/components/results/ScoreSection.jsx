@@ -2,8 +2,8 @@ import React from "react";
 import { Award, TrendingUp, AlertCircle, CheckCircle2 } from "lucide-react";
 import InsightSection from "./InsightSection";
 import SectionBreakdown from "./SectionBreakdown";
-const ScoreSection = () => {
-  const atsScore = 72;
+const ScoreSection = ({result}) => {
+  const atsScore = result.statsData.atsScore;
 
   return (
     <div>
@@ -54,12 +54,12 @@ const ScoreSection = () => {
           </div>
         </div>
         <div className="font-sm mt-2 text-gray-500">Your resume is above average, but implementing the suggestions below will significantly improve your chances with recruiters and ATS systems.</div>
-        <InsightSection/>
+      <InsightSection result={result} />
       </div>
       <div className="w-full border mt-10 border-gray-300 solid"></div>
-    <div className="section breakdown mt-4 p-5">
- <SectionBreakdown/>
-    </div>
+   <div className="section breakdown mt-4 p-5">
+  <SectionBreakdown result={result} />
+</div>
     </div>
   );
 };
