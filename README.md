@@ -1,191 +1,122 @@
-# AI Resume Analyzer
+# 🚀 AI Resume Analyzer
 
-An AI-powered resume analysis web application built with React that helps users evaluate their resumes, analyze ATS compatibility, identify strengths and weaknesses, and receive intelligent improvement suggestions.
+An intelligent **AI-powered Resume Analyzer** built with **React + Gemini API** that analyzes resumes and provides ATS scores, skill insights, improvement suggestions, and actionable recommendations.
 
----
-
-## 🚀 Features
-
-### 📄 Resume Upload
-
-* Upload resumes in:
-
-  * PDF
-  * DOC
-  * DOCX
-* Drag & drop upload support
-* Custom modern upload UI
+> 🔗 **Live Demo:** [https://ai-resume-analyzer-seven-rouge.vercel.app/](https://ai-resume-analyzer-seven-rouge.vercel.app/)
 
 ---
 
-### 🤖 AI-Powered Analysis
+## 📌 Features
 
-* Resume content extraction
-* Skill analysis
-* Experience evaluation
-* ATS compatibility scoring
-* Smart improvement suggestions
-* Missing skills recommendations
-
----
-
-### 📊 ATS Score & Insights
-
-* Overall resume score
-* Section-wise breakdown
-* Strengths analysis
-* Improvement areas
-* Resume quality insights
+- 📄 Upload Resume (PDF support)
+- 🤖 AI-powered resume analysis using **Gemini API**
+- 📊 ATS Score generation (0–100)
+- 🧠 Skill detection (Technical + Soft skills)
+- 📈 Industry comparison & radar analysis
+- 💡 Improvement suggestions with priority levels
+- ⚡ Real-time analysis loading animation
+- 📉 Section-wise breakdown
+- 🎯 Keyword optimization insights
 
 ---
 
-### ⚡ Interactive Processing UI
+## 🧠 AI Analysis Includes
 
-* Animated analysis loader
-* Real-time progress updates
-* Step-by-step resume processing
-* Smooth transitions between pages
+- Basic information extraction
+- Strengths identification
+- Weakness & improvement detection
+- Critical issues detection
+- ATS compatibility score
+- Keyword matching analysis
+- Industry benchmarking
+- Recommended skills list
+- Actionable suggestions (High / Medium / Low priority)
 
 ---
 
 ## 🛠️ Tech Stack
 
-### Frontend
-
-* React.js
-* React Router
-* CSS3
-* Lucide React Icons
-
-### Resume Parsing
-
-* pdf-parse
-* mammoth
-
-### AI Integration
-
-* OpenAI API / Gemini API (planned)
+| Technology | Purpose |
+|---|---|
+| ⚛️ React.js | Frontend Framework |
+| 🎨 Tailwind CSS | UI Styling |
+| 🤖 Google Gemini API | AI Engine |
+| 📦 React Router DOM | Navigation |
+| 📊 Chart.js | Radar & Bar Charts |
+| 🧩 Lucide Icons | Icon Library |
 
 ---
 
-## 📁 Project Structure
+## 📂 Project Structure
 
-```bash
+```
 src/
-│
+├── components/
+│   ├── Home/
+│   ├── loader/
+│   ├── results/
+│   └── common/
 ├── pages/
 │   ├── Home.jsx
 │   ├── Analyzing.jsx
 │   └── Results.jsx
-│
-├── components/
-│
-│   ├── common/
-│   │   ├── Navbar.jsx
-│   │   └── ProgressBar.jsx
-│   │
-│   ├── home/
-│   │   ├── HeroSection.jsx
-│   │   ├── UploadBox.jsx
-│   │   ├── FeaturesSection.jsx
-│   │   └── FeatureCard.jsx
-│   │
-│   ├── loader/
-│   │   ├── AnalysisLoader.jsx
-│   │   └── LoaderStep.jsx
-│   │
-│   └── results/
-│       ├── ResultsHeader.jsx
-│       ├── ScoreSection.jsx
-│       ├── InsightsSection.jsx
-│       ├── InsightCard.jsx
-│       ├── SectionBreakdown.jsx
-│       ├── SkillsAnalysis.jsx
-│       ├── RecommendedSkills.jsx
-│       └── SuggestionsSection.jsx
-│
+├── utils/
+│   ├── aiAnalysis.js
+│   ├── extractText.js
+│   └── analyzeResume.js
 └── App.jsx
 ```
 
 ---
 
-## 🎯 Application Flow
+## 🔄 App Flow
 
-```text
+```
 Home Page
-   ↓
+    ↓
 Upload Resume
-   ↓
-Resume Processing
-   ↓
-AI Analysis
-   ↓
-Results Dashboard
+    ↓
+Extract Text (PDF Parser)
+    ↓
+Navigate → Analyzing Page
+    ↓
+Progress Animation Starts
+    ↓
+Gemini API Processing
+    ↓
+AI Response Generated
+    ↓
+Navigate → Results Page
+    ↓
+Display Full Resume Analysis
 ```
 
 ---
 
-## 🧠 Planned AI Features
+## ⚙️ Setup Instructions
 
-* AI-generated resume summary
-* Job-role compatibility analysis
-* Keyword optimization
-* Resume rewrite suggestions
-* Project recommendation system
-* AI-powered ATS improvement
-
----
-
-## 📸 Screens
-
-### 🏠 Home Page
-
-* Hero section
-* Resume upload box
-* Features overview
-
-### ⚙️ Processing Page
-
-* Animated loader
-* Progress tracking
-* Resume parsing visualization
-
-### 📈 Results Dashboard
-
-* ATS score
-* Resume breakdown
-* Skills analysis
-* Suggestions & recommendations
-
----
-
-## ⚙️ Installation
-
-### 1️⃣ Clone Repository
+### 1. Clone Repository
 
 ```bash
 git clone https://github.com/your-username/ai-resume-analyzer.git
-```
-
----
-
-### 2️⃣ Move into Project Folder
-
-```bash
 cd ai-resume-analyzer
 ```
 
----
-
-### 3️⃣ Install Dependencies
+### 2. Install Dependencies
 
 ```bash
 npm install
 ```
 
----
+### 3. Setup Environment Variables
 
-### 4️⃣ Start Development Server
+Create a `.env` file in the root directory:
+
+```env
+VITE_GEMINI_API_KEY=your_api_key_here
+```
+
+### 4. Run the Project
 
 ```bash
 npm run dev
@@ -193,29 +124,63 @@ npm run dev
 
 ---
 
-## 🔥 Future Improvements
+## 🔑 Gemini API Setup
 
-* Authentication system
-* Resume history
-* Multiple resume comparison
-* Download analysis reports
-* Real AI-based scoring system
-* Dark mode
-* Mobile responsiveness improvements
+1. Go to [Google AI Studio](https://aistudio.google.com/)
+2. Generate your API Key
+3. Add it to your `.env` file
+4. The app uses the following endpoint:
+
+```
+https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent
+```
+
+---
+
+## 📊 Example Output
+
+```json
+{
+  "statsData": {
+    "atsScore": 78,
+    "readabilityScore": 85,
+    "wordCount": 420,
+    "keywordMatch": 72
+  },
+  "strengths": [],
+  "improvements": [],
+  "criticalIssues": [],
+  "suggestions": []
+}
+```
+
+---
+
+## 🚧 Known Issues
+
+- Gemini API response may take 2–5 seconds
+- Large PDFs may slow down text extraction
+- Requires a stable internet connection for AI calls
+
+---
+
+## 🎯 Future Improvements
+
+- [ ] Drag & drop upload UI
+- [ ] PDF preview before analysis
+- [ ] User authentication
+- [ ] Save analysis history
+- [ ] Download report as PDF
+- [ ] Job matching system
 
 ---
 
 ## 👨‍💻 Author
 
-Developed as a modern AI-powered resume analysis platform using React.
+bytesbydev 
 
 ---
 
 ## ⭐ Support
 
-If you like this project:
-
-* Star the repository
-* Fork the projec
-
-ai-resume-analyzer-seven-rouge.vercel.app link
+If you found this project helpful, give it a star ⭐ and share it with others!
