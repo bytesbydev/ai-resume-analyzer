@@ -7,7 +7,6 @@ import aiAnalysis from "../utils/aiAnalysis";
 const Analyzing = () => {
   const location = useLocation();
   const navigate = useNavigate();
-
   const parsedData = location.state?.parsedData;
 
   const [progress, setProgress] = useState(0);
@@ -36,9 +35,7 @@ const Analyzing = () => {
         timers.push(
           setTimeout(() => {
             navigate("/results", {
-              state: {
-                result,
-              },
+              state: { result },
             });
           }, 700)
         );
@@ -49,17 +46,15 @@ const Analyzing = () => {
 
     runAnalysis();
 
-    return () => {
-      timers.forEach((timer) => clearTimeout(timer));
-    };
+    return () => timers.forEach(clearTimeout);
   }, [parsedData, navigate]);
 
   return (
-    <div className="analyzing-page">
+    <div className="min-h-screen bg-gray-50">
       <Navbar />
 
-      <div className="flex justify-center items-center mt-25">
-        <div className="h-120 w-120 p-8.5 rounded-[20px] border-2 border-solid border-[black]">
+      <div className="flex justify-center items-center px-4 py-10 sm:py-16">
+        <div className="w-full max-w-md sm:max-w-lg md:max-w-xl p-5 sm:p-8 rounded-xl border border-gray-200 bg-white shadow-sm">
           <AnaylsisLoader progress={progress} />
         </div>
       </div>
