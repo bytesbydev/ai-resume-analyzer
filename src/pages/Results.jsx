@@ -5,49 +5,43 @@ import ResultHeader from "../components/results/ResultHeader";
 import ScoreSection from "../components/results/ScoreSection";
 import SkillsAnalysis from "../components/results/SkillsAnalysis";
 import SuggestionSection from "../components/results/SuggestionSection";
-import ReccomendedSkills from "../components/results/RecomendedSkills";
-
+import RecomendedSkills from "../components/results/RecomendedSkills"
 const Results = () => {
   const location = useLocation();
-
   const result = location.state?.result;
 
   return (
-    <div className="results-page">
+    <div className="min-h-screen bg-gray-50">
+      <ResultHeader />
 
-      <div className="result-header">
-        <ResultHeader />
-      </div>
-
-      <main className="flex flex-col items-center">
-        <div className="w-[90%] mt-7">
-
+      <main className="flex justify-center px-3 sm:px-6 py-6 sm:py-10">
+        <div className="w-full max-w-6xl space-y-6">
+          {/* Title */}
           <div>
-            <span className="font-semibold text-2xl">
+            <h1 className="font-semibold text-xl sm:text-2xl">
               Resume Analysis Report
-            </span>
-            <br />
-            <span className="text-md font-semibold text-gray-600">
+            </h1>
+            <p className="text-sm sm:text-base text-gray-600">
               Comprehensive breakdown with actionable recommendations
-            </span>
+            </p>
           </div>
 
-          <div className="rounded-3xl p-5 border-2 border-gray-300 mt-5">
+          {/* Sections */}
+          <div className="rounded-2xl p-4 sm:p-5 border border-gray-300 bg-white">
             <ScoreSection result={result} />
           </div>
 
-          <div className="rounded-3xl p-5 border-2 border-gray-300 mt-5">
+          <div className="rounded-2xl p-4 sm:p-5 border border-gray-300 bg-white">
             <SkillsAnalysis result={result} />
           </div>
 
-          <div className="rounded-3xl p-5 border-2 border-gray-300 mt-5">
+          <div className="rounded-2xl p-4 sm:p-5 border border-gray-300 bg-white">
             <SuggestionSection result={result} />
           </div>
 
-          <div className="rounded-3xl p-5 border-2 border-gray-300 mt-5">
-            <ReccomendedSkills result={result} />
+          <div className="rounded-2xl p-4 sm:p-5 border border-gray-300 bg-white">
+            <RecomendedSkills result={result} />
           </div>
-
         </div>
       </main>
     </div>
