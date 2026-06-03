@@ -1,0 +1,452 @@
+{basicInfo: {…}, strengths: Array(6), improvements: Array(5), criticalIssues: Array(3), statsData: {…}, …}
+atsAnalysis
+: 
+Array(5)
+0
+: 
+{title: 'Severe Parsing Errors', description: "The recurring watermark text 'UNLOCK WITH PURCHASE…formation, leading to immediate disqualification.", type: 'Critical Formatting Issue'}
+1
+: 
+{title: 'Keyword Optimization', description: "Excluding the formatting issues, the resume contai…Script', 'HTML5', 'CSS3', and 'API integrations'.", type: 'Strength'}
+2
+: 
+{title: 'Section Clarity', description: "Standard section headings (SUMMARY, EXPERIENCE, PR…owever, 'LEADERSHIP & AWARDS' is a mixed section.", type: 'Minor Improvement Needed'}
+3
+: 
+{title: 'Date Inconsistencies', description: 'Future dates for projects and education will confu… and may trigger flags for data integrity issues.', type: 'Critical Data Issue'}
+4
+: 
+{title: 'Contact Information', description: 'While email and LinkedIn are present, the absence …s ability to gather a complete candidate profile.', type: 'Minor Improvement Needed'}
+length
+: 
+5
+[[Prototype]]
+: 
+Array(0)
+basicInfo
+: 
+email
+: 
+"devendrarawat9876@gmail.com"
+github
+: 
+""
+linkedin
+: 
+"https://linkedin.com/in/devendra-rawat-15a52b293"
+location
+: 
+"Dehradun, Uttarakhand, India"
+name
+: 
+"Devendra Rawat"
+phone
+: 
+""
+portfolio
+: 
+""
+summary
+: 
+"Frontend Developer eager to contribute innovative ideas and collaborate on web-based projects. Internship experience covers building responsive applications, particularly with React.js and JavaScript. Developed a full-stack Employee Management System including crucial API integrations. Proficient in creating attractive, user-friendly interfaces on both technical and artistic fronts. Constantly passionate about learning and optimizing processes for efficiency and scalability. Prepared to bring creativity and expertise into a new role while effectively contributing to team success."
+[[Prototype]]
+: 
+Object
+criticalIssues
+: 
+Array(3)
+0
+: 
+{label: "Severe Formatting Glitches: The repeated 'UNLOCK W… and will cause complete failure for ATS parsing.", severity: 'Critical'}
+1
+: 
+{label: 'Inaccurate/Future Project Dates: Projects dated in…questions about accuracy and attention to detail.', severity: 'High'}
+2
+: 
+{label: "Future Education Dates: Graduation years (2025, 20…be clearly stated as 'expected' if not completed.", severity: 'Medium'}
+length
+: 
+3
+[[Prototype]]
+: 
+Array(0)
+improvements
+: 
+Array(5)
+0
+: 
+{label: "The 'LEADERSHIP & AWARDS' section mixes achievemen…rating or rephrasing for clarity and ATS parsing.", severity: 'Medium'}
+1
+: 
+{label: 'No dedicated GitHub or portfolio link provided in …act information, missing key developer resources.', severity: 'Medium'}
+2
+: 
+{label: "Skills are listed in two different sections ('TECH…petition; consolidate for efficiency and clarity.", severity: 'Medium'}
+3
+: 
+{label: 'The summary could be more concise and highlight sp…ifiable achievements relevant to the target role.', severity: 'Low'}
+4
+: 
+{label: 'No phone number is included in the basic contact information.', severity: 'Low'}
+length
+: 
+5
+[[Prototype]]
+: 
+Array(0)
+industryComparison
+: 
+Array(5)
+0
+: 
+{aspect: 'Experience Level', yourScore: 60, industry: 70}
+1
+: 
+{aspect: 'Technical Skillset', yourScore: 80, industry: 85}
+2
+: 
+{aspect: 'Project Diversity', yourScore: 85, industry: 75}
+3
+: 
+{aspect: 'Quantifiable Achievements', yourScore: 65, industry: 80}
+4
+: 
+{aspect: 'Professional Networking', yourScore: 75, industry: 70}
+length
+: 
+5
+[[Prototype]]
+: 
+Array(0)
+performanceStats
+: 
+Array(5)
+0
+: 
+{label: 'GitHub Profiles Analyzed', value: 'over 100 developers'}
+1
+: 
+{label: 'Impactful Solutions', value: 'Recognized as Best Innovator in campus hackathons'}
+2
+: 
+{label: 'Project Delivery Excellence', value: 'Achieved Top Developer Award in 2023'}
+3
+: 
+{label: 'Conversion Rate Optimization', value: 'Conducted A/B tests to optimize site layouts and increase conversion rates'}
+4
+: 
+{label: 'Food Waste Reduction Goal', value: 'Aiming to effectively minimize food waste through intelligent suggestions'}
+length
+: 
+5
+[[Prototype]]
+: 
+Array(0)
+recommendedSkills
+: 
+Array(7)
+0
+: 
+{label: 'TypeScript', severity: 'High'}
+1
+: 
+{label: 'State Management (e.g., Redux, Context API)', severity: 'High'}
+2
+: 
+{label: 'Testing Frameworks (e.g., Jest, React Testing Library)', severity: 'Medium'}
+3
+: 
+{label: 'Cloud Platforms (e.g., AWS, Azure, GCP)', severity: 'Medium'}
+4
+: 
+{label: 'Build Tools (e.g., Webpack, Vite)', severity: 'Medium'}
+5
+: 
+{label: 'Modern CSS Frameworks (e.g., Tailwind CSS, Bootstrap)', severity: 'Low'}
+6
+: 
+{label: 'Backend Frameworks (e.g., Node.js/Express, Python/Django/Flask)', severity: 'Medium'}
+length
+: 
+7
+[[Prototype]]
+: 
+Array(0)
+sectionScores
+: 
+Array(10)
+0
+: 
+{section: 'basicInfo', score: 70}
+1
+: 
+{section: 'summary', score: 80}
+2
+: 
+{section: 'experience', score: 85}
+3
+: 
+{section: 'projects', score: 70}
+4
+: 
+{section: 'education', score: 75}
+5
+: 
+{section: 'certifications', score: 85}
+6
+: 
+{section: 'technicalSkills', score: 85}
+7
+: 
+{section: 'softSkills', score: 90}
+8
+: 
+{section: 'leadership_awards', score: 70}
+9
+: 
+{section: 'affiliations', score: 80}
+length
+: 
+10
+[[Prototype]]
+: 
+Array(0)
+skillCategories
+: 
+Array(5)
+0
+: 
+{section: 'Frontend Development', score: 90}
+1
+: 
+{section: 'Backend/Database', score: 70}
+2
+: 
+{section: 'Tools & Version Control', score: 85}
+3
+: 
+{section: 'IoT/Hardware', score: 60}
+4
+: 
+{section: 'Methodologies & Soft Skills', score: 90}
+length
+: 
+5
+[[Prototype]]
+: 
+Array(0)
+softSkills
+: 
+Array(8)
+0
+: 
+{label: 'Problem Solving', level: 'Advanced', proficiency: 85}
+1
+: 
+{label: 'Team Collaboration', level: 'Expert', proficiency: 90}
+2
+: 
+{label: 'Agile Methodologies', level: 'Advanced', proficiency: 80}
+3
+: 
+{label: 'Creativity', level: 'Advanced', proficiency: 85}
+4
+: 
+{label: 'Efficiency & Scalability', level: 'Advanced', proficiency: 80}
+5
+: 
+{label: 'UI/UX Design Principles', level: 'Advanced', proficiency: 80}
+6
+: 
+{label: 'Communication', level: 'Intermediate', proficiency: 75}
+7
+: 
+{label: 'Documentation', level: 'Intermediate', proficiency: 70}
+length
+: 
+8
+[[Prototype]]
+: 
+Array(0)
+statsData
+: 
+atsScore
+: 
+25
+keywordMatch
+: 
+70
+readabilityScore
+: 
+10
+wordCount
+: 
+550
+[[Prototype]]
+: 
+Object
+strengths
+: 
+Array(6)
+0
+: 
+{label: 'Strong foundation in core frontend technologies (React.js, JavaScript, HTML, CSS).', severity: 'High'}
+1
+: 
+{label: 'Practical experience demonstrated through diverse projects and internships.', severity: 'High'}
+2
+: 
+{label: 'Ability to work with full-stack concepts (Firebase, API integrations, full-stack EMS project).', severity: 'Medium'}
+3
+: 
+{label: 'Excellent soft skills identified (Problem Solving, Team Collaboration, Agile Methodologies).', severity: 'High'}
+4
+: 
+{label: 'Recognition through awards and active participation in coding communities.', severity: 'High'}
+5
+: 
+{label: 'Experience with UI/UX collaboration and A/B testing, showcasing user-centric development.', severity: 'Medium'}
+length
+: 
+6
+[[Prototype]]
+: 
+Array(0)
+suggestions
+: 
+Array(7)
+0
+: 
+{id: 'S001', title: 'Remove Watermark/Formatting Glitches', priority: 'Critical', category: 'Formatting', impact: 'Eliminates ATS parsing failures and vastly improves readability.', …}
+1
+: 
+{id: 'S002', title: 'Correct Project and Education Dates', priority: 'Critical', category: 'Content Accuracy', impact: 'Ensures factual accuracy and prevents confusion or disqualification by ATS and recruiters.', …}
+2
+: 
+{id: 'S003', title: 'Add Missing Contact Information', priority: 'High', category: 'Basic Info', impact: 'Makes it easier for recruiters to contact you and evaluate your technical contributions.', …}
+3
+: 
+{id: 'S004', title: 'Consolidate and Structure Skills', priority: 'Medium', category: 'Content Organization', impact: 'Improves ATS parsing for skills and provides a clearer overview for recruiters.', …}
+4
+: 
+{id: 'S005', title: "Refine 'LEADERSHIP & AWARDS' Section", priority: 'Medium', category: 'Content Organization', impact: 'Clarifies achievements and separates awards from general experience points.', …}
+5
+: 
+{id: 'S006', title: 'Quantify Achievements in Experience/Projects', priority: 'Medium', category: 'Impact Statement', impact: 'Provides concrete evidence of impact and value, making your contributions more compelling.', …}
+6
+: 
+{id: 'S007', title: 'Tailor Summary for Target Roles', priority: 'Low', category: 'Summary', impact: 'Quickly captures recruiter attention by aligning your profile with the specific job requirements.', …}
+length
+: 
+7
+[[Prototype]]
+: 
+Array(0)
+technicalSkills
+: 
+Array(15)
+0
+: 
+{label: 'React.js', level: 'Advanced', proficiency: 85}
+1
+: 
+{label: 'JavaScript', level: 'Expert', proficiency: 90}
+2
+: 
+{label: 'HTML5', level: 'Expert', proficiency: 90}
+3
+: 
+{label: 'CSS3', level: 'Expert', proficiency: 90}
+4
+: 
+{label: 'Firebase', level: 'Intermediate', proficiency: 70}
+5
+: 
+{label: 'REST APIs', level: 'Advanced', proficiency: 80}
+6
+: 
+{label: 'Git', level: 'Advanced', proficiency: 85}
+7
+: 
+{label: 'GitHub', level: 'Advanced', proficiency: 80}
+8
+: 
+{label: 'VS Code', level: 'Intermediate', proficiency: 75}
+9
+: 
+{label: 'Arduino', level: 'Beginner', proficiency: 60}
+10
+: 
+{label: 'ESP8266', level: 'Beginner', proficiency: 60}
+11
+: 
+{label: 'WebSockets', level: 'Intermediate', proficiency: 65}
+12
+: 
+{label: 'Object-Oriented Programming', level: 'Intermediate', proficiency: 70}
+13
+: 
+{label: 'Database Systems', level: 'Intermediate', proficiency: 65}
+14
+: 
+{label: 'Software Engineering', level: 'Intermediate', proficiency: 70}
+length
+: 
+15
+[[Prototype]]
+: 
+Array(0)
+trendingKeywords
+: 
+Array(14)
+0
+: 
+{keyword: 'Frontend Developer', frequency: 4, inResume: true}
+1
+: 
+{keyword: 'React.js', frequency: 3, inResume: true}
+2
+: 
+{keyword: 'JavaScript', frequency: 5, inResume: true}
+3
+: 
+{keyword: 'HTML', frequency: 4, inResume: true}
+4
+: 
+{keyword: 'CSS', frequency: 4, inResume: true}
+5
+: 
+{keyword: 'API', frequency: 3, inResume: true}
+6
+: 
+{keyword: 'Git', frequency: 2, inResume: true}
+7
+: 
+{keyword: 'GitHub', frequency: 3, inResume: true}
+8
+: 
+{keyword: 'Agile', frequency: 2, inResume: true}
+9
+: 
+{keyword: 'UI/UX', frequency: 2, inResume: true}
+10
+: 
+{keyword: 'Firebase', frequency: 2, inResume: true}
+11
+: 
+{keyword: 'Responsive Design', frequency: 2, inResume: true}
+12
+: 
+{keyword: 'Problem Solving', frequency: 1, inResume: true}
+13
+: 
+{keyword: 'Team Collaboration', frequency: 1, inResume: true}
+length
+: 
+14
+[[Prototype]]
+: 
+Array(0)
+[[Prototype]]
+: 
+Object

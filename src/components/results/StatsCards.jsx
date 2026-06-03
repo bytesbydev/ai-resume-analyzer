@@ -9,45 +9,45 @@ import {
 
 import ProgressBar from "../common/ProgressBar";
 
-const StatsCards = ({ statsData }) => {
+const StatsCards = ({ statsData = {} }) => {
 
-  const cards = [
-    {
-      title: "ATS Score",
-      value: `${statsData.atsScore}%`,
-      icon: <Target className="w-4 h-4 text-blue-600" />,
-      progress: statsData.atsScore,
-      description:
-        statsData.atsScore >= 80
-          ? "Good"
-          : statsData.atsScore >= 60
-          ? "Fair"
-          : "Needs work",
-    },
+const cards = [
+  {
+    title: "ATS Score",
+    value: `${statsData?.atsScore || 0}%`,
+    icon: <Target className="size-4  text-blue-600" />,
+    progress: statsData?.atsScore || 0,
+    description:
+      statsData?.atsScore >= 80
+        ? "Good"
+        : statsData?.atsScore >= 60
+        ? "Fair"
+        : "Needs work",
+  },
 
-    {
-      title: "Readability",
-      value: `${statsData.readabilityScore}%`,
-      icon: <Eye className="w-4 h-4 text-green-600" />,
-      progress: statsData.readabilityScore,
-      description: "Easy to scan",
-    },
+  {
+    title: "Readability",
+    value: `${statsData?.readabilityScore || 0}%`,
+    icon: <Eye className="size-4  text-green-600" />,
+    progress: statsData?.readabilityScore || 0,
+    description: "Easy to scan",
+  },
 
-    {
-      title: "Word Count",
-      value: statsData.wordCount,
-      icon: <FileCheck className="w-4 h-4 text-amber-600" />,
-      description: "Optimal: 400-600",
-    },
+  {
+    title: "Word Count",
+    value: statsData?.wordCount || 0,
+    icon: <FileCheck className="size-4  text-amber-600" />,
+    description: "Optimal: 400-600",
+  },
 
-    {
-      title: "Keyword Match",
-      value: `${statsData.keywordMatch}%`,
-      icon: <TrendingUp className="w-4 h-4 text-purple-600" />,
-      progress: statsData.keywordMatch,
-      description: "vs. job postings",
-    },
-  ];
+  {
+    title: "Keyword Match",
+    value: `${statsData?.keywordMatch || 0}%`,
+    icon: <TrendingUp className="size-4  text-purple-600" />,
+    progress: statsData?.keywordMatch || 0,
+    description: "vs. job postings",
+  },
+];
 
   return (
 

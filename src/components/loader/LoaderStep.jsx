@@ -1,29 +1,51 @@
 import React from "react";
+import { CheckCircle2 } from "lucide-react";
 
-const LoaderStep = ({ icon, title, time, status }) => {
+const LoaderStep = ({ icon: Icon, title, time, status }) => {
+  const isActive = status === "active";
+  const isComplete = status === "completed";
+
   return (
     <div
-      className={`flex h-15 w-full border-2 border-black rounded-[10px] mt-5 gap-2.5 ${
-        status === "active"
-          ? "bg-[#07f09a]"
-          : status === "completed"
-          ? "bg-[#bdf007]"
-          : ""
+      className={`flex items-center gap-3 p-3 rounded-lg transition-all ${
+        isActive || isComplete ? "bg-blue-50" : "bg-gray-50"
       }`}
     >
-      
-      <div className="w-[15%] flex justify-center items-center">
-        <div className="h-10 w-10 rounded-full border border-black flex justify-center items-center bg-red-500">
-          {icon}
-        </div>
+      <div
+        className={`size-9 rounded-full flex items-center justify-center shrink-0 transition-colors ${
+          isComplete
+            ? "bg-green-600"
+            : isActive
+            ? "bg-blue-600"
+            : "bg-gray-300"
+        }`}
+      >
+        {isComplete ? (
+          <CheckCircle2 className="size-5 text-white" />
+        ) : (
+          <Icon className="size-5 text-white" />
+        )}
       </div>
 
-      <div className="text-base p-2.5">
-        <span className="font-bold">{title}</span>
-        <br />
-        <span>{time}</span>
+      <div className="flex-1">
+        <p
+          className={`text-sm font-medium ${
+            isActive || isComplete
+              ? "text-gray-900"
+              : "text-gray-500"
+          }`}
+        >
+          {title}
+        </p>
+
+        <p className="text-xs text-gray-400">
+          {time}
+        </p>
       </div>
 
+      {isActive && !isComplete && (
+        <div className="size-2 rounded-full bg-blue-600 animate-pulse" />
+      )}
     </div>
   );
 };

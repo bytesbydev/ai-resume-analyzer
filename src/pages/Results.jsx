@@ -12,8 +12,6 @@ const Results = () => {
 
   const result = location.state?.result;
 
-  console.log(result);
-
   return (
     <div className="results-page">
 

@@ -17,7 +17,9 @@ const SuggestionCard = ({ suggestions, priority }) => {
         badge: "bg-blue-50 text-blue-700 border-blue-200",
       },
     })[priority];
-  const styles = getPriorityColors(priority);
+const styles = getPriorityColors(
+  priority?.toLowerCase()
+) || getPriorityColors("high");
   return (
     <div>
       <div className="flex flex-col gap-3 border-2 p-5 border-gray-300 rounded-3xl">
@@ -50,8 +52,8 @@ const SuggestionCard = ({ suggestions, priority }) => {
             <p className="text-xs font-medium text-red-700 mb-1">Before:</p>
             <p className="text-sm text-gray-700">{suggestions.before}</p>
           </div>
-          <div className="p-3 rounded-lg bg-red-50 border border-red-200">
-            <p className="text-xs font-medium text-green-700 mb-1">After:</p>
+<div className="p-3 rounded-lg bg-green-50 border border-green-200">
+  <p className="text-xs font-medium text-green-700 mb-1">After:</p>
             <p className="text-sm text-gray-700">{suggestions.after}</p>
           </div>
         </div>

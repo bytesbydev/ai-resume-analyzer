@@ -1,26 +1,31 @@
 import React from "react";
 import LoaderStep from "./LoaderStep";
 import ProgressBar from "../common/ProgressBar";
+import {
+  FileSearch,
+  Brain,
+  Lightbulb,
+} from "lucide-react";
+
+const steps = [
+  {
+    icon: FileSearch,
+    title: "Parsing Resume",
+    time: "1-2s",
+  },
+  {
+    icon: Brain,
+    title: "Analyzing Skills",
+    time: "1-2s",
+  },
+  {
+    icon: Lightbulb,
+    title: "Generating Insights",
+    time: "1-2s",
+  },
+];
 
 const AnaylsisLoader = ({ progress }) => {
-  const steps = [
-    {
-      icon: "📄",
-      title: "Parsing Resume",
-      time: "1-2s",
-    },
-    {
-      icon: "🔍",
-      title: "Analyzing Skills",
-      time: "1-2s",
-    },
-    {
-      icon: "💡",
-      title: "Generating Insights",
-      time: "1-2s",
-    },
-  ];
-
   const currentStep =
     progress >= 89
       ? 3
@@ -42,7 +47,7 @@ const AnaylsisLoader = ({ progress }) => {
         </span>
       </div>
 
-      <div className="w-full mt-8">
+      <div className="space-y-3 mt-8">
         {steps.map((step, index) => {
           const isActive = currentStep >= index;
           const isComplete = currentStep > index;
@@ -55,7 +60,7 @@ const AnaylsisLoader = ({ progress }) => {
 
           return (
             <LoaderStep
-              key={index}
+              key={step.title}
               icon={step.icon}
               title={step.title}
               time={step.time}
@@ -67,7 +72,10 @@ const AnaylsisLoader = ({ progress }) => {
 
       <div className="mt-6">
         <div className="flex justify-between mb-2">
-          <span className="font-medium">Progress</span>
+          <span className="font-medium">
+            Progress
+          </span>
+
           <span className="font-semibold">
             {Math.round(progress)}%
           </span>

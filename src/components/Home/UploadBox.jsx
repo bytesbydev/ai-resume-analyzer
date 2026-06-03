@@ -13,7 +13,6 @@ const UploadBox = () => {
     if (!file) return;
 
     try {
-      // Validate PDF
       if (
         file.type !== "application/pdf" &&
         !file.name.toLowerCase().endsWith(".pdf")
@@ -22,13 +21,11 @@ const UploadBox = () => {
         return;
       }
 
-      // Validate size (5 MB)
       if (file.size > 5 * 1024 * 1024) {
         alert("File size must be under 5 MB");
         return;
       }
 
-      // Extract text
       const text = await extractText(file);
 
       if (!text || text.trim() === "") {
@@ -36,10 +33,8 @@ const UploadBox = () => {
         return;
       }
 
-      // Parse resume
       const parsedData = analyzeResume(text);
 
-      // Navigate to analyzing page
       navigate("/analyzing", {
         state: {
           parsedData,
@@ -52,67 +47,67 @@ const UploadBox = () => {
   };
 
   return (
-    <div>
-      <div className="h-100 w-full flex justify-center items-center text-center bg-white mt-10 border-2 border-solid border-[black]">
-        <div className="flex items-center gap-2.5 flex-col">
-          <div className="flex justify-center items-center h-15 w-15">
-            <svg
-              width="137px"
-              height="137px"
-              viewBox="-5.52 -5.52 35.04 35.04"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g
-                id="SVGRepo_bgCarrier"
-                strokeWidth="0"
-                transform="translate(0,0), scale(1)"
-              >
-                <rect
-                  x="-5.52"
-                  y="-5.52"
-                  width="35.04"
-                  height="35.04"
-                  rx="17.52"
-                  fill="#c7c7c7"
-                />
-              </g>
+    <div className="w-full flex justify-center px-4 mt-12">
+      <div className="w-full max-w-4xl border-2 border-dashed border-gray-300 rounded-xl bg-white py-16 px-6 flex flex-col items-center text-center">
 
-              <g id="SVGRepo_iconCarrier">
-                <path
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M4.17157 3.17157C3 4.34315 3 6.22876 3 10V14C3 17.7712 3 19.6569 4.17157 20.8284C5.34315 22 7.22876 22 11 22H13C16.7712 22 18.6569 22 19.8284 20.8284C21 19.6569 21 17.7712 21 14V10C21 6.22876 21 4.34315 19.8284 3.17157C18.6569 2 16.7712 2 13 2H11C7.22876 2 5.34315 2 4.17157 3.17157ZM7.25 8C7.25 7.58579 7.58579 7.25 8 7.25H16C16.4142 7.25 16.75 7.58579 16.75 8C16.75 8.41421 16.4142 8.75 16 8.75H8C7.58579 8.75 7.25 8.41421 7.25 8ZM7.25 12C7.25 11.5858 7.58579 11.25 8 11.25H16C16.4142 11.25 16.75 11.5858 16.75 12C16.75 12.4142 16.4142 12.75 16 12.75H8C7.58579 12.75 7.25 12.4142 7.25 12ZM8 15.25C7.58579 15.25 7.25 15.5858 7.25 16C7.25 16.4142 7.58579 16.75 8 16.75H13C13.4142 16.75 13.75 16.4142 13.75 16C13.75 15.5858 13.4142 15.25 13 15.25H8Z"
-                  fill="#1C274C"
-                />
-              </g>
-            </svg>
-          </div>
+        {/* Icon */}
+        <div className="w-20 h-20 rounded-full bg-gray-100 flex items-center justify-center mb-6">
+          <svg
+            width="42"
+            height="42"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <path
+              d="M8 7H16M8 11H16M8 15H13"
+              stroke="#94A3B8"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+            />
+            <rect
+              x="4"
+              y="3"
+              width="16"
+              height="18"
+              rx="2"
+              stroke="#94A3B8"
+              strokeWidth="1.8"
+            />
+          </svg>
+        </div>
 
-          <div className="text-xl font-medium">
-            Upload your resume
-          </div>
+        {/* Title */}
+        <h2 className="text-3xl font-semibold text-gray-900 mb-2">
+          Upload your resume
+        </h2>
 
-          <div className="text-base text-[#666]">
-            Drag or drop or click to browse
-          </div>
+        {/* Subtitle */}
+        <p className="text-gray-500 mb-6">
+          Drag and drop or click to browse
+        </p>
 
-          <input
-            className="file:mr-2 file:px-4 file:py-2 file:rounded-md file:border-0 file:bg-indigo-600 file:text-white hover:file:bg-blue-600"
-            onChange={handleFileChange}
-            type="file"
-            accept=".pdf"
-          />
+        {/* Hidden Input */}
+        <input
+          id="resume-upload"
+          type="file"
+          accept=".pdf"
+          onChange={handleFileChange}
+          className="hidden"
+        />
 
-          <div className="text-base text-[#666]">
-            <ul>
-              <li className="list-none">PDF format only.</li>
-              <li className="list-none">Maximum file size: 5MB.</li>
-              <li className="list-none">
-                Analysis takes up to 2 minutes.
-              </li>
-            </ul>
-          </div>
+        {/* Button */}
+        <label
+          htmlFor="resume-upload"
+          className="cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded-lg transition"
+        >
+          Choose File
+        </label>
+
+        {/* Info */}
+        <div className="mt-6 text-sm text-gray-500 space-y-1">
+          <p>• PDF format only</p>
+          <p>• Maximum file size: 5 MB</p>
+          <p>• Analysis takes approximately 3–5 seconds</p>
         </div>
       </div>
     </div>

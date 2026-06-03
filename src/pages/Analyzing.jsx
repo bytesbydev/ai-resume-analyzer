@@ -18,33 +18,40 @@ const Analyzing = () => {
       return;
     }
 
+    const timers = [];
+
     const runAnalysis = async () => {
       try {
         setProgress(10);
 
-        setTimeout(() => setProgress(25), 1000);
-        setTimeout(() => setProgress(42), 2000);
-        setTimeout(() => setProgress(67), 3000);
-        setTimeout(() => setProgress(89), 4000);
+        timers.push(setTimeout(() => setProgress(25), 1000));
+        timers.push(setTimeout(() => setProgress(42), 2000));
+        timers.push(setTimeout(() => setProgress(67), 3000));
+        timers.push(setTimeout(() => setProgress(89), 4000));
 
         const result = await aiAnalysis(parsedData);
 
         setProgress(100);
 
-        setTimeout(() => {
-          navigate("/results", {
-            state: {
-              result,
-            },
-          });
-        }, 700);
-
+        timers.push(
+          setTimeout(() => {
+            navigate("/results", {
+              state: {
+                result,
+              },
+            });
+          }, 700)
+        );
       } catch (error) {
-        console.log(error);
+        console.error("Analysis failed:", error);
       }
     };
 
     runAnalysis();
+
+    return () => {
+      timers.forEach((timer) => clearTimeout(timer));
+    };
   }, [parsedData, navigate]);
 
   return (

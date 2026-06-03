@@ -10,7 +10,7 @@ const ResultHeader = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-lg bg-blue-600 flex items-center justify-center">
-                <FileCheck className="w-5 h-5 text-white" />
+                <FileCheck className="size-5 text-white" />
               </div>
               <div>
                 <h1 className="text-xl font-semibold text-gray-900">
@@ -21,14 +21,14 @@ const ResultHeader = () => {
             </div>
             
             <div className="flex items-center gap-3">
-              <button  className="flex cursor-pointer items-center font-semibold border solid rounded-xl p-2">
-                <Home className="w-4 h-4 mr-2" />
+              <button type="button"  className="flex cursor-pointer items-center font-semibold border solid rounded-xl p-2">
+                <Home className="size-4  mr-2" />
                 New Analysis
               </button>
               <button 
                 className="bg-blue-600 cursor-pointer border solid font-semibold rounded-xl items-center flex p-2 text-white hover:bg-blue-700"
               >
-                <Download className="w-4 h-4 mr-2" />
+                <Download className="size-4  mr-2" />
                 Export Report
               </button>
             </div>
