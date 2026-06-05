@@ -47,11 +47,10 @@ const UploadBox = () => {
   };
 
   return (
-    <div className="w-full flex justify-center px-4 mt-12">
-      <div className="w-full max-w-4xl border-2 border-dashed border-gray-300 rounded-xl bg-white py-16 px-6 flex flex-col items-center text-center">
+<div className="w-full flex justify-center px-3 sm:px-4 mt-8 sm:mt-12">
+  <div className="w-full max-w-4xl border-2 border-dashed border-gray-300 rounded-xl bg-white py-10 sm:py-16 px-4 sm:px-6 flex flex-col items-center text-center">
 
-        {/* Icon */}
-        <div className="w-20 h-20 rounded-full bg-gray-100 flex items-center justify-center mb-6">
+    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gray-100 flex items-center justify-center mb-5 sm:mb-6">
           <svg
             width="42"
             height="42"
@@ -77,14 +76,13 @@ const UploadBox = () => {
         </div>
 
         {/* Title */}
-        <h2 className="text-3xl font-semibold text-gray-900 mb-2">
-          Upload your resume
-        </h2>
+        <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900 mb-2">
+      Upload your resume
+    </h2>
 
-        {/* Subtitle */}
-        <p className="text-gray-500 mb-6">
-          Drag and drop or click to browse
-        </p>
+    <p className="text-sm sm:text-base text-gray-500 mb-6">
+      Drag and drop or click to browse
+    </p>
 
         {/* Hidden Input */}
         <input
@@ -96,19 +94,19 @@ const UploadBox = () => {
         />
 
         {/* Button */}
-        <label
-          htmlFor="resume-upload"
-          className="cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded-lg transition"
-        >
-          Choose File
-        </label>
+         <label
+      htmlFor="resume-upload"
+      className="cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-medium px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg transition text-sm sm:text-base"
+    >
+      Choose File
+    </label>
 
         {/* Info */}
-        <div className="mt-6 text-sm text-gray-500 space-y-1">
-          <p>• PDF format only</p>
-          <p>• Maximum file size: 5 MB</p>
-          <p>• Analysis takes approximately 3–5 seconds</p>
-        </div>
+        <div className="mt-5 sm:mt-6 text-xs sm:text-sm text-gray-500 space-y-1">
+      <p>• PDF format only</p>
+      <p>• Maximum file size: 5 MB</p>
+      <p>• Analysis takes 3-5 seconds</p>
+    </div>
       </div>
     </div>
   );
