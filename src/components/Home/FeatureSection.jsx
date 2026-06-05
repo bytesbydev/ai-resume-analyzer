@@ -14,13 +14,18 @@ const FeatureSection = () => {
     icon:AtsIcon
   }]
   return (
-    <div>
-      <div className=' flex gap-5 mt-12.5 p-3.75'>
-       {features.map((item,index)=>(
-        <FeaturesCard key={index} title={item.heading} description={item.description} icon={item.icon}/>
-       ))}
-      </div>
-    </div>
+   <div>
+  <div className="flex flex-col md:flex-row gap-5 mt-10 sm:mt-12 px-3 sm:px-0">
+    {features.map((item, index) => (
+      <FeaturesCard
+        key={index}
+        title={item.heading}
+        description={item.description}
+        icon={item.icon}
+      />
+    ))}
+  </div>
+</div>
   )
 }
 
