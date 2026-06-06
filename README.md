@@ -1,4 +1,4 @@
-# 👾 AI Resume Analyzer
+# 👾 ScanStack
 
 An intelligent **AI-powered Resume Analyzer** built with **React + Gemini API** that analyzes resumes and provides ATS scores, skill insights, improvement suggestions, and actionable recommendations.
 
