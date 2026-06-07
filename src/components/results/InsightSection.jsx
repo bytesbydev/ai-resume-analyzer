@@ -3,7 +3,7 @@ import InsightCard from "./InsightCard";
 
 const InsightSection = ({ result }) => {
   return (
-    <div className="flex gap-6 h-fit p-3 w-full mt-10">
+<div className="flex flex-col md:flex-row gap-4 mt-6">
       <InsightCard
         title="Strengths"
         type="strength"
