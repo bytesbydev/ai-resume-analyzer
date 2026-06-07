@@ -1,5 +1,4 @@
 import React, { useMemo } from "react";
-
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -14,8 +13,6 @@ import {
 } from "chart.js";
 
 import { Bar, Radar } from "react-chartjs-2";
-
-const EMPTY_ARRAY = [];
 
 ChartJS.register(
   CategoryScale,
@@ -32,34 +29,30 @@ ChartJS.register(
 const radarOptions = {
   maintainAspectRatio: false,
   plugins: {
-    legend: {
-      position: "bottom",
-    },
+    legend: { position: "bottom" },
   },
   scales: {
     r: {
       beginAtZero: true,
       max: 100,
       pointLabels: {
-        font: {
-          size: 14,
-        },
+        font: { size: 12 },
       },
     },
   },
 };
 
 const ChartsSection = ({
-  sectionScores = EMPTY_ARRAY,
-  industryComparison = EMPTY_ARRAY,
+  sectionScores = [],
+  industryComparison = [],
 }) => {
   const sectionChartData = useMemo(
     () => ({
-      labels: sectionScores.map((item) => item.section),
+      labels: sectionScores.map((i) => i.section),
       datasets: [
         {
           label: "Score",
-          data: sectionScores.map((item) => item.score),
+          data: sectionScores.map((i) => i.score),
           backgroundColor: "#2563EB",
           borderRadius: 6,
         },
@@ -70,22 +63,18 @@ const ChartsSection = ({
 
   const radarChartData = useMemo(
     () => ({
-      labels: industryComparison.map((item) => item.aspect),
+      labels: industryComparison.map((i) => i.aspect),
       datasets: [
         {
           label: "Your Resume",
-          data: industryComparison.map(
-            (item) => item.yourScore
-          ),
+          data: industryComparison.map((i) => i.yourScore),
           backgroundColor: "rgba(37,99,235,0.3)",
           borderColor: "#2563EB",
           borderWidth: 2,
         },
         {
           label: "Industry Avg",
-          data: industryComparison.map(
-            (item) => item.industry
-          ),
+          data: industryComparison.map((i) => i.industry),
           backgroundColor: "rgba(16,185,129,0.2)",
           borderColor: "#10B981",
           borderWidth: 2,
@@ -96,29 +85,30 @@ const ChartsSection = ({
   );
 
   return (
-    <div className="grid lg:grid-cols-2 gap-6">
-      <div className="p-5 rounded-2xl border border-gray-200 bg-white">
-        <h2 className="font-semibold mb-4">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+      {/* Bar Chart */}
+      <div className="p-4 sm:p-5 rounded-2xl border border-gray-200 bg-white">
+        <h2 className="font-semibold mb-4 text-sm sm:text-base">
           Section Completeness
         </h2>
 
-        <div className="h-75">
+        <div className="h-64 sm:h-80">
           <Bar data={sectionChartData} />
         </div>
       </div>
 
-      <div className="p-5 rounded-2xl border border-gray-200 bg-white">
-        <h2 className="font-semibold mb-4">
+      {/* Radar Chart */}
+      <div className="p-4 sm:p-5 rounded-2xl border border-gray-200 bg-white">
+        <h2 className="font-semibold mb-4 text-sm sm:text-base">
           Industry Benchmark
         </h2>
 
-        <div className="h-75 flex justify-center items-center">
-          <Radar
-            data={radarChartData}
-            options={radarOptions}
-          />
+        <div className="h-64 sm:h-80 flex justify-center items-center">
+          <Radar data={radarChartData} options={radarOptions} />
         </div>
       </div>
+
     </div>
   );
 };
