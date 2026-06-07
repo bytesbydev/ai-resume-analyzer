@@ -6,28 +6,16 @@ const EMPTY_ARRAY = [];
 const getStatusStyles = (type) => {
   switch (type) {
     case "success":
-      return {
-        bg: "bg-green-100",
-        dot: "bg-green-600",
-      };
+      return { bg: "bg-green-100", dot: "bg-green-600" };
 
     case "warning":
-      return {
-        bg: "bg-amber-100",
-        dot: "bg-amber-600",
-      };
+      return { bg: "bg-amber-100", dot: "bg-amber-600" };
 
     case "danger":
-      return {
-        bg: "bg-red-100",
-        dot: "bg-red-600",
-      };
+      return { bg: "bg-red-100", dot: "bg-red-600" };
 
     default:
-      return {
-        bg: "bg-gray-100",
-        dot: "bg-gray-600",
-      };
+      return { bg: "bg-gray-100", dot: "bg-gray-600" };
   }
 };
 
@@ -38,16 +26,19 @@ const Analysis = ({
 }) => {
   return (
     <div className="space-y-6">
-      <div className="p-5 rounded-2xl border border-gray-200 bg-slate-50">
+
+      {/* Trending Keywords */}
+      <div className="p-4 sm:p-5 rounded-2xl border border-gray-200 bg-slate-50">
+
         <div className="flex items-center gap-2 mb-4">
           <TrendingUp className="size-5 text-blue-600" />
-
-          <h4 className="font-medium text-gray-900">
+          <h4 className="font-medium text-gray-900 text-sm sm:text-base">
             Most Requested Keywords
           </h4>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+
           {trendingKeywords.map((item) => (
             <div
               key={item.keyword}
@@ -74,13 +65,9 @@ const Analysis = ({
               <div className="flex items-center gap-3">
                 <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
                   <div
-                    style={{
-                      width: `${item.frequency}%`,
-                    }}
+                    style={{ width: `${item.frequency}%` }}
                     className={`h-full ${
-                      item.inResume
-                        ? "bg-green-500"
-                        : "bg-amber-500"
+                      item.inResume ? "bg-green-500" : "bg-amber-500"
                     }`}
                   />
                 </div>
@@ -91,34 +78,34 @@ const Analysis = ({
               </div>
             </div>
           ))}
+
         </div>
       </div>
 
-      <div className="p-5 rounded-2xl bg-blue-50 border border-blue-200">
-        <h4 className="font-medium text-gray-900 mb-4 flex items-center gap-2">
+      {/* ATS Analysis */}
+      <div className="p-4 sm:p-5 rounded-2xl bg-blue-50 border border-blue-200">
+
+        <h4 className="font-medium text-gray-900 mb-4 flex items-center gap-2 text-sm sm:text-base">
           <Target className="size-4 text-blue-600" />
           ATS Compatibility Analysis
         </h4>
 
-        <div className="grid md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+
           {atsAnalysis.map((item) => {
             const styles = getStatusStyles(item.type);
 
             return (
-              <div
-                key={`${item.title}-${item.type}`}
-                className="flex gap-3"
-              >
+              <div key={item.title} className="flex gap-3">
+
                 <div
-                  className={`size-5 rounded-full flex items-center justify-center mt-1 ${styles.bg}`}
+                  className={`w-5 h-5 rounded-full flex items-center justify-center mt-1 ${styles.bg}`}
                 >
-                  <div
-                    className={`size-2 rounded-full ${styles.dot}`}
-                  />
+                  <div className={`w-2 h-2 rounded-full ${styles.dot}`} />
                 </div>
 
                 <div>
-                  <h5 className="font-medium text-gray-900">
+                  <h5 className="font-medium text-gray-900 text-sm sm:text-base">
                     {item.title}
                   </h5>
 
@@ -126,30 +113,34 @@ const Analysis = ({
                     {item.description}
                   </p>
                 </div>
+
               </div>
             );
           })}
+
         </div>
       </div>
 
+      {/* Performance */}
       <div className="pt-6 border-t border-gray-200">
+
         <h4 className="text-sm font-medium text-gray-700 mb-4">
           Estimated Performance
         </h4>
 
-        <div className="grid md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
           {performanceStats.map((item) => (
-            <div
-              key={item.label}
-              className="text-sm text-gray-600"
-            >
+            <div key={item.label} className="text-sm text-gray-600">
               <strong className="text-gray-900">
                 {item.label}:
               </strong>{" "}
               {item.value}
             </div>
           ))}
+
         </div>
+
       </div>
     </div>
   );
