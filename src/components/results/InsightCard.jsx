@@ -3,8 +3,8 @@ import { CheckCircle2, AlertCircle } from "lucide-react";
 
 const InsightCard = ({ type, title, data = [] }) => {
   return (
-    <div
-      className={`h-auto w-1/3 rounded-2xl p-4 ${
+   <div
+  className={`w-full md:w-1/3 rounded-2xl p-4 ${
         type === "strength"
           ? "bg-green-50 border border-green-200"
           : type === "improvement"
