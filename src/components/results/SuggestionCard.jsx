@@ -17,47 +17,74 @@ const SuggestionCard = ({ suggestions, priority }) => {
         badge: "bg-blue-50 text-blue-700 border-blue-200",
       },
     })[priority];
-const styles = getPriorityColors(
-  priority?.toLowerCase()
-) || getPriorityColors("high");
+
+  const styles =
+    getPriorityColors(priority?.toLowerCase()) ||
+    getPriorityColors("high");
+
   return (
-    <div>
-      <div className="flex flex-col gap-3 border-2 p-5 border-gray-300 rounded-3xl">
-        <div className="flex gap-5">
-          {" "}
-          <div>
-            <AlertCircle className={`${styles.icon}`} />
-          </div>
-          <div className="font-semibold text-black">{suggestions.title}</div>
-        </div>
-        <div className="flex flex-wrap items-center gap-4">
-          {" "}
-          <div
-            className={` border-2 p-2 ${styles.badge} rounded-md text-xs font-medium`}
-          >
-            {suggestions.priority} priority
-          </div>
-          <div className="bg-slate-50 text-slate-700 p-2  text-xs font-medium rounded-md border-slate-200 ">
-            {suggestions.category}
-          </div>
-          <div className="text-xs text-gray-500">
-            {suggestions.timeToFix} 
-          </div>
-        </div>
-       <p className="text-sm text-gray-600  mb-3">
-                {suggestions.impact}
-              </p>
-        <div className="gap-3 flex flex-col ">
-          <div className="p-3 rounded-lg bg-red-50 border border-red-200">
-            <p className="text-xs font-medium text-red-700 mb-1">Before:</p>
-            <p className="text-sm text-gray-700">{suggestions.before}</p>
-          </div>
-<div className="p-3 rounded-lg bg-green-50 border border-green-200">
-  <p className="text-xs font-medium text-green-700 mb-1">After:</p>
-            <p className="text-sm text-gray-700">{suggestions.after}</p>
-          </div>
-        </div>
+    <div className="w-full border border-gray-200 rounded-2xl p-4 sm:p-5 bg-white space-y-4">
+
+      {/* Title Row */}
+      <div className="flex items-start gap-3">
+
+        <AlertCircle className={`${styles.icon} w-5 h-5 mt-1 shrink-0`} />
+
+        <h3 className="text-sm sm:text-base font-semibold text-gray-900 leading-snug">
+          {suggestions.title}
+        </h3>
+
       </div>
+
+      {/* Meta Row */}
+      <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs sm:text-sm">
+
+        <span
+          className={`border px-2 py-1 rounded-md font-medium ${styles.badge}`}
+        >
+          {suggestions.priority} priority
+        </span>
+
+        <span className="bg-slate-50 text-slate-700 px-2 py-1 rounded-md border border-slate-200">
+          {suggestions.category}
+        </span>
+
+        <span className="text-gray-500">
+          {suggestions.timeToFix}
+        </span>
+
+      </div>
+
+      {/* Impact */}
+      <p className="text-sm text-gray-600">
+        {suggestions.impact}
+      </p>
+
+      {/* Before / After */}
+      <div className="space-y-3">
+
+        {/* Before */}
+        <div className="p-3 rounded-lg bg-red-50 border border-red-200">
+          <p className="text-xs font-medium text-red-700 mb-1">
+            Before:
+          </p>
+          <p className="text-sm text-gray-700">
+            {suggestions.before}
+          </p>
+        </div>
+
+        {/* After */}
+        <div className="p-3 rounded-lg bg-green-50 border border-green-200">
+          <p className="text-xs font-medium text-green-700 mb-1">
+            After:
+          </p>
+          <p className="text-sm text-gray-700">
+            {suggestions.after}
+          </p>
+        </div>
+
+      </div>
+
     </div>
   );
 };
