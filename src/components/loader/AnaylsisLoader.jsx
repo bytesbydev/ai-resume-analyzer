@@ -27,36 +27,28 @@ const steps = [
 
 const AnaylsisLoader = ({ progress }) => {
   const currentStep =
-    progress >= 89
-      ? 3
-      : progress >= 42
-      ? 2
-      : progress >= 10
-      ? 1
-      : 0;
+    progress >= 89 ? 3 :
+    progress >= 42 ? 2 :
+    progress >= 10 ? 1 : 0;
 
   return (
     <div>
-      <div className="text-center h-1/5">
-        <span className="text-3xl font-bold">
+      {/* Header */}
+      <div className="text-center mb-6">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold">
           Analysing your resume
-        </span>
-        <br />
-        <span className="text-base text-[rgb(145,140,140)]">
+        </h2>
+
+        <p className="text-sm sm:text-base text-gray-500 mt-1">
           Processing your resume...
-        </span>
+        </p>
       </div>
 
-      <div className="space-y-3 mt-8">
+      {/* Steps */}
+      <div className="space-y-3">
         {steps.map((step, index) => {
           const isActive = currentStep >= index;
           const isComplete = currentStep > index;
-
-          const status = isComplete
-            ? "completed"
-            : isActive
-            ? "active"
-            : "pending";
 
           return (
             <LoaderStep
@@ -64,18 +56,20 @@ const AnaylsisLoader = ({ progress }) => {
               icon={step.icon}
               title={step.title}
               time={step.time}
-              status={status}
+              status={
+                isComplete ? "completed" :
+                isActive ? "active" :
+                "pending"
+              }
             />
           );
         })}
       </div>
 
+      {/* Progress */}
       <div className="mt-6">
-        <div className="flex justify-between mb-2">
-          <span className="font-medium">
-            Progress
-          </span>
-
+        <div className="flex justify-between mb-2 text-sm sm:text-base">
+          <span className="font-medium">Progress</span>
           <span className="font-semibold">
             {Math.round(progress)}%
           </span>
@@ -86,5 +80,4 @@ const AnaylsisLoader = ({ progress }) => {
     </div>
   );
 };
-
 export default AnaylsisLoader;
