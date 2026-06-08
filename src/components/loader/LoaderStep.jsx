@@ -12,7 +12,7 @@ const LoaderStep = ({ icon: Icon, title, time, status }) => {
       }`}
     >
       <div
-        className={`size-9 rounded-full flex items-center justify-center shrink-0 transition-colors ${
+        className={`w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center shrink-0 transition-colors ${
           isComplete
             ? "bg-green-600"
             : isActive
@@ -21,15 +21,15 @@ const LoaderStep = ({ icon: Icon, title, time, status }) => {
         }`}
       >
         {isComplete ? (
-          <CheckCircle2 className="size-5 text-white" />
+          <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
         ) : (
-          <Icon className="size-5 text-white" />
+          <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
         )}
       </div>
 
       <div className="flex-1">
         <p
-          className={`text-sm font-medium ${
+          className={`text-sm sm:text-base font-medium ${
             isActive || isComplete
               ? "text-gray-900"
               : "text-gray-500"
@@ -44,7 +44,7 @@ const LoaderStep = ({ icon: Icon, title, time, status }) => {
       </div>
 
       {isActive && !isComplete && (
-        <div className="size-2 rounded-full bg-blue-600 animate-pulse" />
+        <div className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
       )}
     </div>
   );
