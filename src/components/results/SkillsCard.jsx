@@ -80,7 +80,7 @@ const SkillsCard = ({ title, icon, skills = EMPTY_ARRAY }) => {
       </div>
 
       {title !== "Recommended Skills to add" ? (
-        <div className="grid md:grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           {skills.map((skill) => (
             <SkillItem
               key={`${skill.label}-${skill.level}`}
