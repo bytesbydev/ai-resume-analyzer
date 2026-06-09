@@ -6,21 +6,30 @@ import Analysis from "./Analysis";
 
 const RecommendedSkills = ({ result }) => {
   return (
-    <div className="space-y-6">
-      <StatsCards
-        statsData={result?.statsData}
-      />
+    <div className="space-y-6 w-full">
 
-      <ChartsSection
-        sectionScores={result?.sectionScores || []}
-        industryComparison={result?.industryComparison || []}
-      />
+      {/* Stats */}
+      <div className="w-full">
+        <StatsCards statsData={result?.statsData} />
+      </div>
 
-      <Analysis
-        trendingKeywords={result?.trendingKeywords || []}
-        atsAnalysis={result?.atsAnalysis || []}
-        performanceStats={result?.performanceStats || []}
-      />
+      {/* Charts */}
+      <div className="w-full">
+        <ChartsSection
+          sectionScores={result?.sectionScores || []}
+          industryComparison={result?.industryComparison || []}
+        />
+      </div>
+
+      {/* Analysis */}
+      <div className="w-full">
+        <Analysis
+          trendingKeywords={result?.trendingKeywords || []}
+          atsAnalysis={result?.atsAnalysis || []}
+          performanceStats={result?.performanceStats || []}
+        />
+      </div>
+
     </div>
   );
 };
