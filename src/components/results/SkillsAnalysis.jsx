@@ -20,8 +20,8 @@ const SkillsAnalysis = ({ result }) => {
           </p>
         </div>
       </div>
-
-      <div className="flex flex-col gap-4">
+      
+<div className="flex flex-col gap-4">
         <SkillsCard
           title="Technical Skills"
           icon={<Code2 className="text-blue-600" />}
